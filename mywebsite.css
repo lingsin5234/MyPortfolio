@@ -1,0 +1,85 @@
+/*
+	Comment
+*/
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Rubik, Roboto;
+  font-size: 24px;
+}
+
+.bgimg1 { 
+  /* background image */
+  background-image: url("banff_bros.jpg");
+  min-height: 100%; 
+  position: relative;
+  opacity: 0.65;
+
+  /* parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg2 { 
+  background-image: url("bg_skiing.jpg");
+  min-height: 100%; 
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg3 { 
+  background-image: url("bg_chart.jpg");
+  min-height: 100%; 
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg4 { 
+  background-image: url("bg_mountain.jpg");
+  min-height: 100%; 
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg5 { 
+  background-image: url("bg_class.jpg");
+  min-height: 100%; 
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.float {
+	position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+div {
+	display: block;
+}
+
+p {
+	margin: 0;
+}

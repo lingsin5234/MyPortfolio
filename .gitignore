@@ -1,0 +1,6 @@
+# ignore all image files
+*.jpg
+
+
+# Whitelisted
+!.gitignore
