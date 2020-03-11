@@ -4,4 +4,6 @@
 **/.idea
 **/.idea/*
 manage.py
-
+**/__pycache__
+**/__pycache__/*
+db.sqlite3
