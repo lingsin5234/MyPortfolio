@@ -1,6 +1,7 @@
 # ignore all image files
-*.jpg
+**/djangoapps
+**/djangoapps/*
+**/.idea
+**/.idea/*
+manage.py
 
-
-# Whitelisted
-!.gitignore
