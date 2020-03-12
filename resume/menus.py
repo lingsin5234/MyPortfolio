@@ -15,8 +15,7 @@ if debug:
     Menu.add_item("main", MenuItem("Projects", url="#", weight=10))
 else:
     # the real links that will be accepted in prod
-    # from baseball import views as baseball_vw
-    # Menu.add_item("main", MenuItem("Baseball", reverse(baseball_vw.homepage), weight=10))
-    # from budget import views as budget_vw
-    # Menu.add_item("main", MenuItem("Budget App", reverse(budget_vw.homepage), weight=10))
-    pass
+    from baseball import views as baseball_vw
+    Menu.add_item("main", MenuItem("Baseball", reverse(baseball_vw.homepage), weight=10))
+    from budget import views as budget_vw
+    Menu.add_item("main", MenuItem("Budget App", reverse(budget_vw.homepage), weight=10))
