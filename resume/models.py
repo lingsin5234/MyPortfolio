@@ -9,7 +9,7 @@ MONTHS = (('JAN', 'JAN'), ('FEB', 'FEB'), ('MAR', 'MAR'), ('APR', 'APR'), ('MAY'
 # IT Skills
 class TechSkills(models.Model):
     name = models.CharField(max_length=25)
-    year_exp = models.DecimalField(max_digits=5, decimal_places=2)
+    year_exp = models.IntegerField()
 
     def __str__(self):
         return self.name
