@@ -10,6 +10,7 @@ MONTHS = (('JAN', 'JAN'), ('FEB', 'FEB'), ('MAR', 'MAR'), ('APR', 'APR'), ('MAY'
 class TechSkills(models.Model):
     name = models.CharField(max_length=25)
     year_exp = models.IntegerField()
+    order = models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -32,23 +33,23 @@ class Education(models.Model):
 # Work Experience
 class WorkExperience(models.Model):
     company = models.CharField(max_length=50)
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=30)
     start_year = models.IntegerField()
     start_month = models.CharField(max_length=3, choices=MONTHS)
     end_year = models.IntegerField(null=True)
     end_month = models.CharField(max_length=3, choices=MONTHS, null=True)
 
     def __str__(self):
-        return self.company + self.title
+        return self.company + ': ' + self.title
 
 
 # Work Descriptions
 class WorkDescriptions(models.Model):
     job = models.ForeignKey(WorkExperience, on_delete=models.SET_NULL, null=True, default=None)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.job
+        return str(self.job) + ' - ' + self.description[0:99] + ' ...'
 
 
 # Hobbies
@@ -62,6 +63,7 @@ class Hobbies(models.Model):
 # General Skills
 class GeneralSkills(models.Model):
     name = models.CharField(max_length=25)
+    order = models.IntegerField()
 
     def __str__(self):
         return self.name
