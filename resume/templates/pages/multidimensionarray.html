@@ -1,5 +1,65 @@
 {% include 'partials/header_resume.html' %}
+<div id="work_exp"></div>
 <script>
+    // testing
+    var dataset = [{"id": 1, "company": "rbc", "desc": [""]},
+                {"id": 2, "company": "TD", "desc": ["desc_1", "desc_2", "desc_3", "desc_4"]}];
+    var local = d3.local();
+    console.log(dataset);
+
+    // declarations, setup SVG
+    // var work_exp = JSON.parse('{{dict_we|safe}}');
+    var box_width = 800;
+    var box_height = 200; // change to depend on length of work_desc
+    var svg = d3.select('#work_exp').append('svg')
+        .attr('height', 600).attr('width', 800);
+
+    // set up groups
+    var workgroup = svg.selectAll('g')
+        .data(dataset).enter().append('g');
+
+    // create a box for each employment
+    var employer = workgroup.append('rect')
+        .attr('height', 200).attr('width', box_width)
+        .attr('fill', '#4b4b50')
+        .attr('x', 0).attr('y', function(d,i){
+            return i*210
+        });
+
+    // company
+    var company = workgroup.append('text')
+        .style('text-anchor', 'left')
+        .attr('fill', 'white')
+        .attr('x', 30).attr('y', function(d,i){
+            return i*210+50
+        }).attr('font-family', 'roboto')
+        .attr('font-size', '1.0em')
+        .text(function(d) { return d.company; });
+
+    var test = workgroup.append("svg")
+        .attr('height', box_height).attr('width', box_width-20)
+        .attr('x', 0).attr('y', function(d,i) {
+            return i * 170 + 40
+        })
+        //.selectAll("rect")
+        //.data(dataset)
+        //.enter()
+        .append("g")
+        .selectAll("text")
+        .data( function(d,i) {
+            local.set(this, i)
+            console.log(d.desc)
+            return d.desc;
+        })
+        .enter()
+        .append("text")
+        .text( function(d,i) { return d; })
+        .style('text-anchor', 'left')
+        .attr("x", function(d,i) { return local.get(this) + 10; })
+        .attr("y", function(d,i) { return (i * 20) + 70; });
+
+</script>
+<!--script>
     var dataset = [[1,3,3,5,6,7],[3,5,8,3,2,6],[9,0,6,3,6,3],[3,4,4,5,6,8],[3,4,5,2,1,8]];
 
     var svg = d3.select("body")
@@ -27,6 +87,6 @@
         .attr("font-family", "sans-serif")
         .attr("font-size", "20px")
         .attr('fill', 'white');
-</script>
+</script-->
 </body>
 {% include 'partials/footer_resume.html' %}

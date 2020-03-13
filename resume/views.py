@@ -91,6 +91,8 @@ def show_workexp(request):
         indv_wd = [wd['description'] for wd in dict_wd if wd['job'] == we.id]
         if len(indv_wd) > 0:
             obj['work_desc'] = indv_wd
+        else:
+            obj['work_desc'] = [""]  # create a blank array still.
         dict_we.append(obj)
 
     work_exp = all_work_exp

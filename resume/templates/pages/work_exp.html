@@ -6,6 +6,7 @@
         // declarations, setup SVG
         var work_exp = JSON.parse('{{dict_we|safe}}');
         var box_width = 800;
+        var box_height = 200; // change to depend on length of work_desc
         var svg = d3.select('#work_exp').append('svg')
             .attr('height', 600).attr('width', 800);
 
@@ -56,30 +57,38 @@
                 return str;
             });
 
-        // work descriptions
-        var work_desc_box = workgroup.append('rect')
-            .attr('height', 200).attr('width', box_width-50)
-            .attr('fill', '#4b4b50')
-            .attr('x', 10).attr('y', function(d,i){
-                return i*210+60
-            }).attr('font-family', 'roboto')
-            .attr('font-size', '0.9em');
-        var work_desc_each = work_desc_box.selectAll('text')
-            .data(function(d,i) { return d.work_desc; }
-
-            .each(function(d) {
-                var li = d3.select(this);
-                li.append('ul').selectAll('li')
-                    .data(function(d) { return d.work_desc; })
-                    .enter().append('text')
-                    .text(function(d) { return d; })
-            });
+        var dataset = [{"id": 1, "company": "rbc", "desc": [""]},
+                        {"id": 2, "company": "TD", "desc": ["desc_1", "desc_2", "desc_3", "desc_4"]}];
+        var local = d3.local();
+        console.log(work_exp);
+        console.log(dataset);
+        var test = workgroup.append("svg")
+            .attr('height', box_height).attr('width', box_width-20)
+            .attr('x', 0).attr('y', function(d,i) {
+                return i * 170 + 40
+            })
+            //.selectAll("rect")
+            //.data(work_exp)
+            //.enter()
+            .append("g")
+            .selectAll("text")
+            .data( function(d,i) {
+                local.set(this, i)
+                console.log(d.work_desc)
+                return d.work_desc;
+            })
+            .enter()
+            .append("text")
+            .text( function(d,i) { return d; })
+            .style('text-anchor', 'left')
+            .attr("x", function(d,i) { return (i * 60) + 10; })
+            .attr("y", function(d,i) { return (local.get(this) * 20) + 40; });
 
 
 
     </script>
 
     <br><br>
-    <p>Check your work: {{dict_we}}</p>
+    <!--p>Check your work: {{dict_we}}</p-->
 </body>
 {% include 'partials/footer_resume.html' %}
