@@ -1,8 +1,13 @@
-// declarations, setup SVG
+// declarations
 var box_width = 800;
-var box_height = 200; // change to depend on length of work_desc
+// current setup as 75 offset to the descriptions with descriptions 22 apart
+// var box_height = 200;
+var box_height = max_desc * 22 + 75;
+var num_work = work_exp.length;
+
+// setup SVG
 var svg = d3.select('#work_exp').append('svg')
-    .attr('height', 600).attr('width', box_width);
+    .attr('height', num_work * (box_height + 10)).attr('width', box_width);
 var local = d3.local();
 
 // set up groups
@@ -11,10 +16,10 @@ var workgroup = svg.selectAll('g')
 
 // create a box for each employment
 var employer = workgroup.append('rect')
-    .attr('height', 200).attr('width', box_width)
+    .attr('height', box_height).attr('width', box_width)
     .attr('fill', '#4b4b50')
     .attr('x', 0).attr('y', function(d,i){
-        return i*210
+        return i * (box_height + 10)
     });
 
 // job title
@@ -22,7 +27,7 @@ var title = workgroup.append('text')
     .style('text-anchor', 'left')
     .attr('fill', 'white')
     .attr('x', 10).attr('y', function(d,i){
-        return i*210+25
+        return i * (box_height + 10) + 25
     }).attr('font-family', 'roboto')
     .attr('font-size', '1.4em')
     .text(function(d) { return d.title; });
@@ -32,7 +37,7 @@ var company = workgroup.append('text')
     .style('text-anchor', 'left')
     .attr('fill', 'white')
     .attr('x', 30).attr('y', function(d,i){
-        return i*210+50
+        return i * (box_height + 10) + 50
     }).attr('font-family', 'roboto')
     .attr('font-size', '1.0em')
     .text(function(d) { return d.company; });
@@ -42,7 +47,7 @@ var years = workgroup.append('text')
     .style('text-anchor', 'right')
     .attr('fill', 'white')
     .attr('x', box_width-175).attr('y', function(d,i){
-        return i*210+25
+        return i * (box_height + 10) + 25
     }).attr('font-family', 'roboto')
     .attr('font-size', '1.1em')
     .text(function(d) {
@@ -56,7 +61,7 @@ var years = workgroup.append('text')
 var test = workgroup.append("svg")
     .attr('height', box_height).attr('width', box_width-20)
     .attr('x', 0).attr('y', function(d,i) {
-        return i * 170 + 40
+        return i * (box_height + 10)
     })
     .append("g")
     .selectAll("text")

@@ -44,6 +44,9 @@ def show_resume(request):
     work_exp = []
     work_desc = []
 
+    # find max desc
+    max_desc = 0
+
     # convert all models to dict for JSON
     for t in techs:
         add = model_to_dict(t)
@@ -66,6 +69,8 @@ def show_resume(request):
         indv_wd = [d['description'] for d in work_desc if d['job'] == w.id]
         if len(indv_wd) > 0:
             add['work_desc'] = indv_wd
+            if len(indv_wd) > max_desc:
+                max_desc = len(indv_wd)
         else:
             add['work_desc'] = [""]
         work_exp.append(add)
@@ -75,7 +80,8 @@ def show_resume(request):
         'gen_skills': json.dumps(gen_skills),
         'education': json.dumps(education),
         'work_exp': json.dumps(work_exp),
-        'work_desc': json.dumps(work_desc)
+        'work_desc': json.dumps(work_desc),
+        'max_desc': max_desc
     }
 
     return render(request, 'pages/resume.html', context)
