@@ -1,0 +1,13 @@
+{% include 'partials/header_resume.html' %}
+    <h1>Work Experience Test Page</h1>
+
+    {% for w in work_exp %}
+    <p>{{w}}</p>
+    {% endfor %}
+    <ul>
+        {% for w in work_desc %}
+        <li>{{w.description}}</li>
+        {% endfor %}
+    </ul>
+</body>
+{% include 'partials/footer_resume.html' %}

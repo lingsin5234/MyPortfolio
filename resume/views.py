@@ -70,3 +70,20 @@ def show_resume(request):
     }
 
     return render(request, 'pages/resume.html', context)
+
+
+# show work exp test view
+def show_workexp(request):
+
+    all_work_exp = WorkExperience.objects.all()
+    all_work_desc = WorkDescriptions.objects.all()
+
+    work_exp = all_work_exp
+    work_desc = all_work_desc
+
+    context = {
+        'work_exp': work_exp,
+        'work_desc': work_desc
+    }
+
+    return render(request, 'pages/work_exp.html', context)
