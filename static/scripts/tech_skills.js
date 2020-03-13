@@ -49,3 +49,15 @@ exp_fill.transition()
             return d.year_exp/10 * 200;
         }
     });
+
+// years of exp text
+var exp_text = group_skills.append('text')
+    .attr('class', 'exp-text')
+    .attr('fill', 'white')
+    .style('text-anchor', 'right')
+    .attr('x', 180)
+    .attr('y', 100)
+    .attr('font-family', 'roboto')
+    .attr('font-size', '0.6em')
+    .text('10+ yrs');
+
