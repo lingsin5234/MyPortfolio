@@ -78,12 +78,29 @@ def show_workexp(request):
     all_work_exp = WorkExperience.objects.all()
     all_work_desc = WorkDescriptions.objects.all()
 
+    # next change all work_description to dict
+    dict_wd = []
+    for wd in all_work_desc:
+        obj = model_to_dict(wd)
+        dict_wd.append(obj)
+
+    # go through each work exp and add the corresponding work_descriptions
+    dict_we = []
+    for we in all_work_exp:
+        obj = model_to_dict(we)
+        indv_wd = [wd['description'] for wd in dict_wd if wd['job'] == we.id]
+        if len(indv_wd) > 0:
+            obj['work_desc'] = indv_wd
+        dict_we.append(obj)
+
     work_exp = all_work_exp
     work_desc = all_work_desc
 
     context = {
         'work_exp': work_exp,
-        'work_desc': work_desc
+        'work_desc': work_desc,
+        'dict_we': dict_we,
+        'dict_wd': dict_wd
     }
 
     return render(request, 'pages/work_exp.html', context)
