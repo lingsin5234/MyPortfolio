@@ -54,12 +54,21 @@ def show_resume(request):
     for e in edus:
         add = model_to_dict(e)
         education.append(add)
-    for w in works:
-        add = model_to_dict(w)
-        work_exp.append(add)
+
+    # special treatment for work_desc and work_exp
     for d in workds:
         add = model_to_dict(d)
         work_desc.append(add)
+    # for each work_exp, match the work_descs available
+    for w in works:
+        add = model_to_dict(w)
+        # create a list of work_desc
+        indv_wd = [d['description'] for d in work_desc if d['job'] == w.id]
+        if len(indv_wd) > 0:
+            add['work_desc'] = indv_wd
+        else:
+            add['work_desc'] = [""]
+        work_exp.append(add)
 
     context = {
         'tech_skills': json.dumps(tech_skills),

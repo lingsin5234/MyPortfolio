@@ -8,7 +8,8 @@
         var box_width = 800;
         var box_height = 200; // change to depend on length of work_desc
         var svg = d3.select('#work_exp').append('svg')
-            .attr('height', 600).attr('width', 800);
+            .attr('height', 600).attr('width', box_width);
+        var local = d3.local();
 
         // set up groups
         var workgroup = svg.selectAll('g')
@@ -57,35 +58,28 @@
                 return str;
             });
 
-        var dataset = [{"id": 1, "company": "rbc", "desc": [""]},
-                        {"id": 2, "company": "TD", "desc": ["desc_1", "desc_2", "desc_3", "desc_4"]}];
-        var local = d3.local();
-        console.log(work_exp);
-        console.log(dataset);
+        // call the workgroup box then for EACH work_exp, get the work_desc
         var test = workgroup.append("svg")
             .attr('height', box_height).attr('width', box_width-20)
             .attr('x', 0).attr('y', function(d,i) {
                 return i * 170 + 40
             })
-            //.selectAll("rect")
-            //.data(work_exp)
-            //.enter()
             .append("g")
             .selectAll("text")
             .data( function(d,i) {
+                // this part calls the work_desc for EACH work_exp
                 local.set(this, i)
-                console.log(d.work_desc)
                 return d.work_desc;
             })
             .enter()
             .append("text")
-            .text( function(d,i) { return d; })
-            .style('text-anchor', 'left')
-            .attr("x", function(d,i) { return (i * 60) + 10; })
-            .attr("y", function(d,i) { return (local.get(this) * 20) + 40; });
-
-
-
+                .style('text-anchor', 'left')
+                .attr('fill', 'white')
+                // local.get(this) gets the current index in current array; != parent index (i)
+                .attr("x", function(d,i) { return local.get(this) + 10; })
+                .attr("y", function(d,i) { return (i * 22) + 75; })
+                .attr('font-size', '0.9em')
+                .text( function(d,i) { return d; });
     </script>
 
     <br><br>
