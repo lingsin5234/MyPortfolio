@@ -1,6 +1,4 @@
 // declarations, setup SVG
-//var work_exp = JSON.parse('{{work_exp|safe}}');
-//console.log(work_exp);
 var box_width = 800;
 var svg = d3.select('#work_exp').append('svg')
     .attr('height', 600).attr('width', 800);
