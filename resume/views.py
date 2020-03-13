@@ -99,8 +99,14 @@ def show_workexp(request):
     context = {
         'work_exp': work_exp,
         'work_desc': work_desc,
-        'dict_we': dict_we,
+        'dict_we': json.dumps(dict_we),
         'dict_wd': dict_wd
     }
 
     return render(request, 'pages/work_exp.html', context)
+
+
+# blank view
+def blank(request):
+
+    return render(request, 'pages/multidimensionarray.html')

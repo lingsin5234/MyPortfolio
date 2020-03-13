@@ -1,17 +1,85 @@
 {% include 'partials/header_resume.html' %}
     <h1>Work Experience Test Page</h1>
+    <!-- now for some d3.js-->
+    <div id="work_exp"></div>
+    <script>
+        // declarations, setup SVG
+        var work_exp = JSON.parse('{{dict_we|safe}}');
+        var box_width = 800;
+        var svg = d3.select('#work_exp').append('svg')
+            .attr('height', 600).attr('width', 800);
 
-    {% for w in work_exp %}
-    <p>{{w}}</p>
-    {% endfor %}
-    <ul>
-        {% for w in work_desc %}
-        <li>{{w.description}}</li>
-        {% endfor %}
-    </ul>
+        // set up groups
+        var workgroup = svg.selectAll('g')
+            .data(work_exp).enter().append('g');
 
-    <p>{{dict_we}}</p>
+        // create a box for each employment
+        var employer = workgroup.append('rect')
+            .attr('height', 200).attr('width', box_width)
+            .attr('fill', '#4b4b50')
+            .attr('x', 0).attr('y', function(d,i){
+                return i*210
+            });
 
-    <p>{{dict_wd}}</p>
+        // job title
+        var title = workgroup.append('text')
+            .style('text-anchor', 'left')
+            .attr('fill', 'white')
+            .attr('x', 10).attr('y', function(d,i){
+                return i*210+25
+            }).attr('font-family', 'roboto')
+            .attr('font-size', '1.4em')
+            .text(function(d) { return d.title; });
+
+        // company
+        var company = workgroup.append('text')
+            .style('text-anchor', 'left')
+            .attr('fill', 'white')
+            .attr('x', 30).attr('y', function(d,i){
+                return i*210+50
+            }).attr('font-family', 'roboto')
+            .attr('font-size', '1.0em')
+            .text(function(d) { return d.company; });
+
+        // years worked
+        var years = workgroup.append('text')
+            .style('text-anchor', 'right')
+            .attr('fill', 'white')
+            .attr('x', box_width-175).attr('y', function(d,i){
+                return i*210+25
+            }).attr('font-family', 'roboto')
+            .attr('font-size', '1.1em')
+            .text(function(d) {
+                var str = d.start_month + ' ' + d.start_year + ' - ';
+                if (d.end_year == null) {str = str + 'present';}
+                else {str = str + d.end_month + ' ' + d.end_year;}
+                return str;
+            });
+
+        // work descriptions
+        var work_desc_box = workgroup.append('rect')
+            .attr('height', 200).attr('width', box_width-50)
+            .attr('fill', '#4b4b50')
+            .attr('x', 10).attr('y', function(d,i){
+                return i*210+60
+            }).attr('font-family', 'roboto')
+            .attr('font-size', '0.9em');
+        var work_desc_each = work_desc_box.selectAll('text')
+            .data(function(d,i) { return d.work_desc; }
+
+            .each(function(d) {
+                var li = d3.select(this);
+                li.append('ul').selectAll('li')
+                    .data(function(d) { return d.work_desc; })
+                    .enter().append('text')
+                    .text(function(d) { return d; })
+            });
+
+
+
+    </script>
+
+    <br><br>
+    <p>Check your work: {{dict_we}}</p>
 </body>
 {% include 'partials/footer_resume.html' %}

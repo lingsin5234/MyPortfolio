@@ -6,7 +6,6 @@ var svg = d3.select('#work_exp').append('svg')
 // set up groups
 var workgroup = svg.selectAll('g')
     .data(work_exp).enter().append('g');
-workgroup;
 
 // create a box for each employment
 var employer = workgroup.append('rect')
