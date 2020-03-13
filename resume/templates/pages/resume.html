@@ -4,9 +4,41 @@
         <div id="highlights">
             <h3>HIGHLIGHTS OF QUALIFICATION</h3>
         </div>
-        <div id="work_exp">
+        <div>
             <h3>WORK EXPERIENCE</h3>
+            <div id="work_exp">
+            <script>
+                // declarations, setup SVG
+                var work_exp = JSON.parse('{{work_exp|safe}}');
+                var svg = d3.select('#work_exp').append('svg')
+                    .attr('height', 600).attr('width', 800);
 
+                // set up groups
+                var workgroup = svg.selectAll('g')
+                    .data(work_exp).enter().append('g');
+
+                // create a box for each employment
+                var employer = workgroup.append('rect')
+                    .attr('height', 200).attr('width', 800)
+                    .attr('x', 0)
+                    .attr('y', function(d,i){
+                        return i*210
+                    });
+
+                // job title
+                var title = workgroup.append('text')
+                    .style('text-anchor', 'left')
+                    .attr('fill', 'white')
+                    .attr('x', 10)
+                    .attr('y', function(d,i){
+                        return i*210+20
+                    })
+                    .attr('font-family', 'roboto')
+                    .attr('font-size', '1.1em')
+                    .text(function(d) { return d.title; });
+
+            </script>
+            </div>
         </div>
     <script>
         // declarations, setup SVG
@@ -22,7 +54,7 @@
         var skill_names = group_skills.append('text')
             .attr('class', 'skill-text')
             .attr('fill', 'white')
-            .style("text-anchor", "<left></left>")
+            .style('text-anchor', 'left')
             .attr('x', 0)
             .attr('y', function(d,i) {
                 return i*50 + 20
