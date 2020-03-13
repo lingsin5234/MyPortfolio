@@ -1,10 +1,13 @@
 // declarations, setup SVG
 var svg = d3.select('#startContent').append('svg')
-    .attr('height', 1000).attr('width', 500);
+    .attr('height', 1000).attr('width', 800);
 
 // set up the groups
 var group_skills = svg.selectAll('g')
-    .data(tech_skills).enter().append('g');
+    .data(tech_skills).enter().append('g')
+    .attr("transform", function(d,i) {
+        return "translate(" + (i % 3 * 250 + 20) + "," + (Math.floor(i / 3) * 60 + 10) + ")";
+    });
 
 // list the skills as text
 var skill_names = group_skills.append('text')
@@ -12,9 +15,7 @@ var skill_names = group_skills.append('text')
     .attr('fill', 'white')
     .style('text-anchor', 'left')
     .attr('x', 0)
-    .attr('y', function(d,i) {
-        return i*50 + 20
-    })
+    .attr('y', 70)
     .attr('font-family', 'roboto')
     .attr('font-size', '1.1em')
     .text(function(d) { return d.name; });
@@ -26,9 +27,7 @@ var skill_bars = group_skills.append('rect')
     .attr('fill', 'gray')
     .attr('height', 15).attr('width', 200)
     .attr('x', 0)
-    .attr('y', function(d,i) {
-        return i*50 + 25
-    });
+    .attr('y', 75);
 
 // set up experience-fill bars
 var exp_fill = group_skills.append('rect')
@@ -37,9 +36,7 @@ var exp_fill = group_skills.append('rect')
     .attr('fill', 'orange')
     .attr('height', 15).attr('width', 0)
     .attr('x', 0)
-    .attr('y', function(d,i) {
-        return i*50 + 25
-    });;
+    .attr('y', 75);
 
 // move the exp-fill bar after page load
 exp_fill.transition()
