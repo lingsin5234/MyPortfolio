@@ -13,3 +13,6 @@ db.sqlite3
 **/budget/*
 **/admin
 **/admin/*
+resume/.git
+resume/.git/*
+resume/.gitignore
