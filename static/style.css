@@ -1,15 +1,26 @@
+@import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
+
+@font-face {
+    font-family: "Berlin Sans FB"; src: url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.eot");
+    src: url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/fe2027c27b6a24505f548c6fd2e1076d.svg#Berlin Sans FB") format("svg");
+}
+
 body {
     background-color: #38383d;
     color: #eeeeee;
-    font-family: 'Roboto';
+    font-family: 'roboto', 'sans-serif';
 }
 
-#title {
+#my_title, #my_name {
     background-color: #4D4D64;
     color: #FF7C00;
 }
 h1 {
-    margin-left: 15px;
+    margin: 0px;
 }
 
 h3 {
