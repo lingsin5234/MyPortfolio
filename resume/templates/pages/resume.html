@@ -1,16 +1,22 @@
 {% include 'partials/header_resume.html' %}
-    <h1>SINTO LING</h1>
+    <div id="title">
+        <h1>SINTO LING</h1>
+    </div>
     <div id="startContent" class="container-fluid">
         <div id="highlights">
-            <h3>HIGHLIGHTS OF QUALIFICATION</h3>
+            <h3>HIGHLIGHTS OF QUALIFICATION</h3><hr>
         </div>
         <div>
-            <h3>WORK EXPERIENCE</h3>
+            <h3>WORK EXPERIENCE</h3><hr>
             <div id="work_exp"></div>
         </div>
         <div>
-            <h3>TECHNICAL SKILLS</h3>
+            <h3>TECHNICAL SKILLS</h3><hr>
             <div id="tech_skills"></div>
+        </div>
+        <div>
+            <h3>EDUCATION</h3><hr>
+            <div id="education"></div>
         </div>
     </div>
 
@@ -19,6 +25,7 @@
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script>
     (function () {
+            window.box_width = 800;
             window.work_exp = JSON.parse('{{ work_exp|safe }}');
             window.tech_skills = JSON.parse('{{tech_skills|safe}}');
             window.gen_skills = JSON.parse('{{gen_skills|safe}}');
@@ -28,6 +35,7 @@
 </script>
 <script src="{% static 'scripts/work_exp.js' %}"></script>
 <script src="{% static 'scripts/tech_skills.js' %}"></script>
+<script src="{% static 'scripts/education.js' %}"></script>
 
 </body>
 {% include 'partials/footer_resume.html' %}

@@ -3,14 +3,36 @@ body {
     color: #eeeeee;
     font-family: 'Roboto';
 }
-h1 {
+
+#title {
     background-color: #4D4D64;
     color: #FF7C00;
 }
+h1 {
+    margin-left: 15px;
+}
+
+h3 {
+    margin-block-start: 0.5em;
+    margin-block-end: 0px;
+}
+
+hr {
+    margin: 0px 0px 1em 0px;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #EEEEEE;
+    width: 800px;
+}
+
 input, select {
     background-color: #333333;
     border-color: #555555;
     color: #eeeeee;
+}
+
+.flex-grow-1{
+    padding: 0px;
 }
 
 .dark-blue-text {

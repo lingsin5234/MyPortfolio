@@ -1,5 +1,4 @@
 // declarations
-var box_width = 800;
 // current setup as 75 offset to the descriptions with descriptions 22 apart
 // var box_height = 200;
 var box_height = max_desc * 22 + 75;
