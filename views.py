@@ -31,7 +31,7 @@ def show_skills(request):
 def show_resume(request):
 
     # call all the objects
-    techs = TechSkills.objects.all().order_by('-order')
+    techs = TechSkills.objects.all().order_by('order')
     gens = GeneralSkills.objects.all().order_by('name')
     edus = Education.objects.all().order_by('-end_year')
     works = WorkExperience.objects.all().order_by('-start_year')
