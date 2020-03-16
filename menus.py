@@ -7,6 +7,7 @@ from djangoapps import settings as st
 
 # add items to the main menu
 Menu.add_item("main", MenuItem("Home", reverse(resume_vw.homepage), weight=10))
+Menu.add_item("main", MenuItem("Resume", reverse(resume_vw.show_resume), weight=10))
 
 # set if statement for the links to other apps - which won't work in dev
 debug = st.DEBUG
