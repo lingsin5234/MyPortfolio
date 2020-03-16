@@ -49,3 +49,7 @@ input, select {
 .dark-blue-text {
 color: #0A38F5;
 }
+
+td, th {
+    padding: 1px 4px;
+}

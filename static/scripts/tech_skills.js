@@ -42,7 +42,7 @@ var exp_fill = group_skills.append('rect')
 
 // move the exp-fill bar after page load
 exp_fill.transition()
-    .duration(1000)
+    .duration(2500)
     .attr('width', function(d) {
         // using 10 years as max
         if (d.year_exp > 10) {
