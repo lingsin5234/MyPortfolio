@@ -15,7 +15,7 @@ var edu_group = svg.selectAll('g')
 // create a box for each education
 var education = edu_group.append('rect')
     .attr('height', box_height).attr('width', box_width)
-    .attr('fill', '#4b4b50')
+    .attr('fill', '#BC986A')
     .attr('x', 0).attr('y', function(d,i){
         return i * (box_height + 10)
     });
@@ -23,31 +23,28 @@ var education = edu_group.append('rect')
 // major
 var major = edu_group.append('text')
     .style('text-anchor', 'left')
-    .attr('fill', 'white')
+    .attr('fill', '#FFFFFF')
     .attr('x', 10).attr('y', function(d,i){
         return i * (box_height + 10) + 30
-    }).attr('font-family', 'roboto')
-    .attr('font-size', '1.4em')
+    }).attr('font-size', '1.4em')
     .text(function(d) { return d.major; });
 
 // school + cert
 var school = edu_group.append('text')
     .style('text-anchor', 'left')
-    .attr('fill', 'white')
+    .attr('fill', '#FFFFFF')
     .attr('x', 10).attr('y', function(d,i){
         return i * (box_height + 10) + 55
-    }).attr('font-family', 'roboto')
-    .attr('font-size', '1.0em')
+    }).attr('font-size', '1.0em')
     .text(function(d) { return d.school + ' - ' + d.cert; });
 
 // years attended
 var years = edu_group.append('text')
     .style('text-anchor', 'right')
-    .attr('fill', 'white')
+    .attr('fill', '#FFFFFF')
     .attr('x', box_width-175).attr('y', function(d,i){
         return i * (box_height + 10) + 25
-    }).attr('font-family', 'roboto')
-    .attr('font-size', '1.1em')
+    }).attr('font-size', '1.1em')
     .text(function(d) {
         var str = d.start_month + ' ' + d.start_year + ' - ';
         if (d.end_year == null) {str = str + 'present';}

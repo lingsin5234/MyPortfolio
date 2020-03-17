@@ -17,10 +17,10 @@ var group_skills = svg.selectAll('g')
 // list the skills as text
 var skill_names = group_skills.append('text')
     .attr('class', 'skill-text')
-    .attr('fill', 'white')
+    .attr('fill', '#8D8741')
     .style('text-anchor', 'left')
     .attr('x', 0).attr('y', 5)
-    .attr('font-family', 'roboto')
+    .attr('font-weight', 'bold')
     .attr('font-size', '1.1em')
     .text(function(d) { return d.name; });
 
@@ -28,7 +28,7 @@ var skill_names = group_skills.append('text')
 var skill_bars = group_skills.append('rect')
     .attr('class', 'bar-rect')
     .attr('rx', 10).attr('ry', 10)
-    .attr('fill', 'gray')
+    .attr('fill', '#DAAD86')
     .attr('height', 15).attr('width', 200)
     .attr('x', 0).attr('y', 10);
 
@@ -36,7 +36,7 @@ var skill_bars = group_skills.append('rect')
 var exp_fill = group_skills.append('rect')
     .attr('class', 'exp-rect')
     .attr('rx', 10).attr('ry', 10)
-    .attr('fill', 'orange')
+    .attr('fill', '#BC986A')
     .attr('height', 15).attr('width', 0)
     .attr('x', 0).attr('y', 10);
 
@@ -55,10 +55,9 @@ exp_fill.transition()
 // years of exp text
 var exp_text = group_skills.append('text')
     .attr('class', 'exp-text')
-    .attr('fill', 'white')
+    .attr('fill', '#FFFFFF')
     .style('text-anchor', 'right')
     .attr('x', 180).attr('y', 35)
-    .attr('font-family', 'roboto')
     .attr('font-size', '0.6em')
     .text('10+ yrs');
 
