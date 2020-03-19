@@ -1,23 +1,43 @@
 {% include 'partials/header_resume.html' %}
-    <h1>SINTO LING</h1>
-    <div id="startContent" class="container-fluid">
-        <!-- for now, just dump my resume here -->
-        <h3>HIGHLIGHT OF QUALIFICATIONS</h3>
-        <ul>
-            <li>Detail-Oriented & Self-Motivated</li>
-            <li></li>
-        </ul>
-        <h3>SKILL SET</h3>
-        <ul>
-            <li>Data Wrangling</li>
-            <li>Python & Django</li>
-            <li>MySQL, SQL Server, Postgres</li>
-            <li>R Programming</li>
-            <li>HTML, CSS, Javascript</li>
-            <li>D3.js Data Visualization</li>
-            <li>Microsoft Office Suite: Word, Excel, PowerPoint, Outlook</li>
-            <li>MS Windows, Ubuntu</li>
-        </ul>
-    </div>
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>SINTO LING</h1>
+    </div><br>
+
+    <div id="my_grid" class="d-flex justify-content-center"></div>
+
+    {% load static %}
+    <script>
+        // declarations, svg setup
+        var projects = JSON.parse('{{projects|safe}}');
+        var svg_height = 800;
+        var svg_width = 600;
+        var panel_width = 80;
+        var svg = d3.select('#my_grid').append('svg')
+            .attr('height', svg_height).attr('width', svg_width);
+
+        // create groups
+        var panels = svg.selectAll('g')
+            .data(projects).enter().append('g');
+
+        // add title
+        var title = panels.append('text')
+            .attr('font-size', '1em')
+            .text(function(d) { return d.name; })
+            .attr('x', function(d,i) {
+                return i * 150;
+            }).attr('y', 10);
+
+        // add image
+        var image = panels.append('svg:image')
+            .attr('xlink:href', function(d) {
+                return d.img;
+            })
+            .attr('width', 300)
+            .attr('height', 150)
+            .attr('x', function(d,i) {
+                return i * 150;
+            }).attr('y', 20)
+            .attr('preserveAspectRatio', 'xMinYMax');
+    </script>
 
 {% include 'partials/footer_resume.html' %}
