@@ -8,7 +8,19 @@ import decimal
 # homepage
 def homepage(request):
 
-    return render(request, 'pages/me.html')
+    # give temporary data for projects
+    projects = [
+        {'id': 1, 'name': 'Resume', 'img': 'static/img/writing.jpg'},
+        {'id': 2, 'name': 'Baseball', 'img': 'static/img/baseball.jpg'},
+        {'id': 3, 'name': 'Budget Demo', 'img': 'static/img/piggybank.jpg'},
+        {'id': 4, 'name': 'Weather Data', 'img': 'static/img/noaa.jpg'}
+    ]
+
+    context = {
+        'projects': json.dumps(projects)
+    }
+
+    return render(request, 'pages/me.html', context)
 
 
 # skills testing page
