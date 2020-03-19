@@ -63,14 +63,17 @@
 
                             // need to CENTER the middle tile
                             abs_middle = (grid_width * (width + 15)) / 2  // offset by column * 15;
-                            column = 0;
-                            data[0].push({
-                                    x: abs_middle + x - (width / 2) + column * 15,  // to add some margin/padding
+                            is_middle = Math.floor(remainder / 2);   // want floor because column = 0;
+                            x_constant = abs_middle + x - (width / 2);
+
+                            for (var column = 0; column < remainder; column++) {
+                                data[0].push({
+                                    x: x_constant + (column - is_middle) * (width + 15),  // to add some margin/padding
                                     y: y + row * 20,  // add some margin/padding
                                     width: width,
                                     height: height
-                                })
-
+                                });
+                            }
                         }
                     }
 
@@ -134,7 +137,7 @@
     </script>
     <script>
         var grid_width = 4;
-        var gridArray = makeGrid(5, grid_width);
+        var gridArray = makeGrid(7, grid_width);
         console.log(makeGrid);
         var svg_height = 800;
         var svg_width = grid_width * 400 + 60
