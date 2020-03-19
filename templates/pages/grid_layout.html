@@ -33,43 +33,55 @@
                     // if grid is even
                     if (grid_width % 2 == 0) {
 
-                        // divisible by remainder means its still even
+                        // remainder is even
+                        if (remainder % 2 == 0) {
 
-                        // smallest even remainder = 2
-                        if (remainder == 2) {
-                            // this is the box number that this row should start at
-                            start_box = grid_width / remainder
-                        } else {
-                            // box number this row should start at
-                            start_box = grid_width / 2 + 1 - remainder / 2
+                            // smallest even remainder = 2
+                            if (remainder == 2) {
+                                // this is the box number that this row should start at
+                                start_box = grid_width / remainder
+                            } else {
+                                // box number this row should start at
+                                start_box = grid_width / 2 + 1 - remainder / 2
+                            }
+                            start_index = start_box - 1
+                            x = width * start_index
+
+                            for (var column = start_index; column < remainder + start_index; column++) {
+                                data[row].push({
+                                    x: x + column * 15,  // to add some margin/padding
+                                    y: y + row * 20,  // add some margin/padding
+                                    width: width,
+                                    height: height
+                                })
+                                x += width; // increment x
+                            }
                         }
-                        start_index = start_box - 1
-                        x = width * start_index
 
-                        for (var column = start_index; column < remainder + start_index; column++) {
-                            data[row].push({
-                                x: x + column * 15,  // to add some margin/padding
-                                y: y + row * 20,  // add some margin/padding
-                                width: width,
-                                height: height
-                            })
-                            x += width; // increment x
+                        // remainder is odd on even grid
+                        else {
+
+                            // need to CENTER the middle tile
+                            abs_middle = (grid_width * (width + 15)) / 2  // offset by column * 15;
+                            column = 0;
+                            data[0].push({
+                                    x: abs_middle + x - (width / 2) + column * 15,  // to add some margin/padding
+                                    y: y + row * 20,  // add some margin/padding
+                                    width: width,
+                                    height: height
+                                })
+
                         }
-
                     }
 
                     else {
-
-                        // if grid is odd
-                        if (grid_width % 2 == 0) {
+                        // remainder is EVEN on an ODD grid
+                        if (remainder % 2 == 0) {
 
                         }
 
-                        // if grid is odd
+                        // ODD remainder on ODD grid
                         else {
-
-                            // not divisible by 2 means remainder is ODD
-
                             // smallest ODD remainder = 1
                             if (remainder == 1) {
                                 // this is the box number that this row should start at
@@ -121,8 +133,8 @@
         }
     </script>
     <script>
-        var grid_width = 3;
-        var gridArray = makeGrid(4, grid_width);
+        var grid_width = 4;
+        var gridArray = makeGrid(5, grid_width);
         console.log(makeGrid);
         var svg_height = 800;
         var svg_width = grid_width * 400 + 60
