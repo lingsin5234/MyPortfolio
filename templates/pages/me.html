@@ -7,6 +7,14 @@
 
     {% load static %}
     <script>
+        (function() {
+            window.projects = JSON.parse('{{projects|safe}}');
+        }());
+    </script>
+    <script src="{% static 'scripts/make_grid_function.js' %}"></script>
+    <script src="{% static 'scripts/resume_grid_layout.js' %}"></script>
+    <script>
+        /*
         // declarations, svg setup
         var projects = JSON.parse('{{projects|safe}}');
         var svg_height = 800;
@@ -19,7 +27,7 @@
         var panels = svg.selectAll('g')
             .data(projects).enter().append('g');
 
-        // add title
+        // add title to grid
         var title = panels.append('text')
             .attr('font-size', '1em')
             .text(function(d) { return d.name; })
@@ -38,6 +46,23 @@
                 return i * 150;
             }).attr('y', 20)
             .attr('preserveAspectRatio', 'xMinYMax');
+        */
+        // add panels
+        var panels = grid.selectAll('g')
+            .data(projects).enter().append('g');
+
+        // add image to each rect from the grid layout
+        var image = panels.append('svg:image')
+            .attr('xlink:href', function(d) {
+                return d.img;
+            })
+            .attr('width', 300)
+            .attr('height', 150)
+            .attr('x', function(d,i) {
+                return i * 150;
+            }).attr('y', 20)
+            .attr('preserveAspectRatio', 'xMinYMax');
+
     </script>
 
 {% include 'partials/footer_resume.html' %}

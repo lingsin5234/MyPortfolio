@@ -4,175 +4,20 @@
     </div><br>
 
     <div id="my_grid" class="d-flex justify-content-center"></div>
+
+    {% load static %}
+    <script src="{% static 'scripts/make_grid_function.js' %}"></script>
     <script>
-        function makeGrid(boxes, grid_width) {
-            var data = new Array();
-            var x = 1;
-            var y = 1;
-            var width = 400; // 16:9 ratio
-            var height = 225;
-
-            // figure out what grid you want
-            /*  3: one row of 3
-                4: 2 x 2
-                5: 3 x 2
-                6: 3 x 2 */
-            // Use grid of 3 then. :)
-            var row_count = Math.ceil(boxes / grid_width)
-            var remainder = boxes % grid_width
-
-            // now iterate rows and columns
-            for (var row = 0; row < row_count; row++) {
-
-                // create an array within the "data" array
-                data.push( new Array() );
-
-                // check if its the LAST row
-                if (row + 1 == row_count) {
-
-                    // if grid is even
-                    if (grid_width % 2 == 0) {
-
-                        // remainder is even
-                        if (remainder % 2 == 0) {
-
-                            // smallest even remainder = 2
-                            if (remainder == 2) {
-                                // this is the box number that this row should start at
-                                start_box = grid_width / remainder
-                            } else {
-                                // box number this row should start at
-                                start_box = grid_width / 2 + 1 - remainder / 2
-                            }
-                            start_index = start_box - 1
-                            x = width * start_index
-
-                            for (var column = start_index; column < remainder + start_index; column++) {
-                                data[row].push({
-                                    x: x + column * 15,  // to add some margin/padding
-                                    y: y + row * 20,  // add some margin/padding
-                                    width: width,
-                                    height: height
-                                })
-                                x += width; // increment x
-                            }
-                        }
-
-                        // remainder is odd on even grid
-                        else {
-
-                            // need to CENTER the middle tile
-                            abs_middle = (grid_width * (width + 15)) / 2  // offset by column * 15;
-                            is_middle = Math.floor(remainder / 2);   // want floor because column = 0;
-                            x_constant = abs_middle + x - (width / 2);
-
-                            for (var column = 0; column < remainder; column++) {
-                                data[0].push({
-                                    x: x_constant + (column - is_middle) * (width + 15),  // to add some margin/padding
-                                    y: y + row * 20,  // add some margin/padding
-                                    width: width,
-                                    height: height
-                                });
-                            }
-                        }
-                    }
-
-                    else {
-                        // remainder is EVEN on an ODD grid
-                        if (remainder % 2 == 0) {
-
-                            // need to CENTER the middle LINE not the box
-                            abs_middle = (grid_width * (width + 15)) / 2  // offset by column * 15;
-                            is_middle = remainder / 2;   // this number is always non-decimal
-                            x_constant = abs_middle + x;
-
-                            for (var column = 0; column < remainder; column++) {
-                                data[0].push({
-                                    x: x_constant + (column - is_middle) * (width + 15),  // to add some margin/padding
-                                    y: y + row * 20,  // add some margin/padding
-                                    width: width,
-                                    height: height
-                                });
-                            }
-                        }
-
-                        // ODD remainder on ODD grid
-                        else {
-                            // smallest ODD remainder = 1
-                            if (remainder == 1) {
-                                // this is the box number that this row should start at
-                                start_box = Math.ceil(grid_width / 2)
-                            } else {
-                                // box number this row should start at
-                                start_box = Math.ceil(grid_width / 2) + 1 - Math.ceil(remainder / 2)
-
-                                /* quick empirical check
-                                ^(7/2) + 1 - ^(3/2) = 4+1-2 = 3
-                                ^(7/2) + 1 - ^(5/2) = 4+1-3 = 2
-                                ^(9/2) + 1 - ^(7/2) = 5+1-4 = 2
-                                ^(9/2) + 1 - ^(5/2) = 5+1-3 = 3*/
-                            }
-                            start_index = start_box - 1
-                            x = width * start_index
-
-                            for (var column = start_index; column < remainder + start_index; column++) {
-                                data[row].push({
-                                    x: x + column * 15,  // to add some margin/padding
-                                    y: y + row * 20,  // add some margin/padding
-                                    width: width,
-                                    height: height
-                                });
-                                x += width; // increment x
-                            }
-
-                        }
-
-                    }
-
-                } else {
-                    // not last row
-                    for (var column = 0; column < grid_width; column++) {
-                        data[row].push({
-                            x: x + column * 15,  // to add some margin/padding
-                            y: y + row * 20,  // add some margin/padding
-                            width: width,
-                            height: height
-                        });
-                        x += width; // increment x
-                    }
-                }
-
-                x = 1; // reset x
-                y += height; // increment y to next row
-            }
-            return data;
-        }
+        (function() {
+            window.projects = JSON.parse('{{projects|safe}}');
+            window.grid_width = 3;
+            window.gridArray = makeGrid(projects.length, grid_width);
+        }());
     </script>
     <script>
-        var grid_width = 3;
-        var gridArray = makeGrid(4, grid_width);
-        console.log(makeGrid);
-        var svg_height = 800;
-        var svg_width = grid_width * 400 + 60;
-
-        var grid = d3.select('#my_grid').append('svg')
-            .attr('height', svg_height).attr('width', svg_width);
-
-        var row = grid.selectAll('.row')
-            .data(gridArray).enter().append('g')
-            .attr('class', 'row');
-
-        var column = row.selectAll('.panel-box')
-            .data(function(d) { return d; })
-            .enter().append('rect')
-            .attr('class', 'panel-box')
-            .attr('x', function(d) { return d.x; })
-            .attr('y', function(d) { return d.y; })
-            .attr('width', function(d) { return d.width; })
-            .attr('height', function(d) { return d.height; })
-            .attr('fill', 'transparent')
-            .attr('stroke', '#daad86')
-            .attr('margin', '5px 5px 5px 5px');
+        var projectsGrid = dataToGridArray(projects, gridArray, grid_width);
     </script>
+    <script src="{% static 'scripts/resume_grid_layout.js' %}"></script>
+
 
 {% include 'partials/footer_resume.html' %}
