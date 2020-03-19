@@ -20,7 +20,7 @@ def homepage(request):
         'projects': json.dumps(projects)
     }
 
-    return render(request, 'pages/me.html', context)
+    return render(request, 'pages/grid_layout.html', context)
 
 
 # skills testing page
