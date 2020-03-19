@@ -81,6 +81,19 @@
                         // remainder is EVEN on an ODD grid
                         if (remainder % 2 == 0) {
 
+                            // need to CENTER the middle LINE not the box
+                            abs_middle = (grid_width * (width + 15)) / 2  // offset by column * 15;
+                            is_middle = remainder / 2;   // this number is always non-decimal
+                            x_constant = abs_middle + x;
+
+                            for (var column = 0; column < remainder; column++) {
+                                data[0].push({
+                                    x: x_constant + (column - is_middle) * (width + 15),  // to add some margin/padding
+                                    y: y + row * 20,  // add some margin/padding
+                                    width: width,
+                                    height: height
+                                });
+                            }
                         }
 
                         // ODD remainder on ODD grid
@@ -108,7 +121,7 @@
                                     y: y + row * 20,  // add some margin/padding
                                     width: width,
                                     height: height
-                                })
+                                });
                                 x += width; // increment x
                             }
 
@@ -124,7 +137,7 @@
                             y: y + row * 20,  // add some margin/padding
                             width: width,
                             height: height
-                        })
+                        });
                         x += width; // increment x
                     }
                 }
@@ -136,11 +149,11 @@
         }
     </script>
     <script>
-        var grid_width = 4;
-        var gridArray = makeGrid(7, grid_width);
+        var grid_width = 3;
+        var gridArray = makeGrid(4, grid_width);
         console.log(makeGrid);
         var svg_height = 800;
-        var svg_width = grid_width * 400 + 60
+        var svg_width = grid_width * 400 + 60;
 
         var grid = d3.select('#my_grid').append('svg')
             .attr('height', svg_height).attr('width', svg_width);
