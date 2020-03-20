@@ -12,10 +12,8 @@
             window.projects = JSON.parse('{{projects|safe}}');
             window.grid_width = 3;
             window.gridArray = makeGrid(projects.length, grid_width);
+            window.projectsGrid = dataToGridArray(projects, gridArray, grid_width);
         }());
-    </script>
-    <script>
-        var projectsGrid = dataToGridArray(projects, gridArray, grid_width);
     </script>
     <script src="{% static 'scripts/resume_grid_layout.js' %}"></script>
 
