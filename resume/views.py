@@ -11,7 +11,7 @@ def homepage(request):
     # give temporary data for projects
     projects = [
         {'id': 1, 'name': 'Resume', 'img': 'static/img/writing.jpg', 'link': 'resume/'},
-        {'id': 2, 'name': 'Baseball', 'img': 'static/img/baseball.jpg', 'link': 'baseball/'},
+        {'id': 2, 'name': 'Baseball', 'img': 'static/img/baseball.jpg', 'link': 'baseball/runJobs/'},
         {'id': 3, 'name': 'Budget Demo', 'img': 'static/img/piggybank.jpg', 'link': 'budget/'}
         # {'id': 4, 'name': 'Weather Data', 'img': 'static/img/noaa.jpg', 'link': '#'}
     ]
