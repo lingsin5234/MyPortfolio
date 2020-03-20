@@ -6,63 +6,15 @@
     <div id="my_grid" class="d-flex justify-content-center"></div>
 
     {% load static %}
+    <script src="{% static 'scripts/make_grid_function.js' %}"></script>
     <script>
         (function() {
             window.projects = JSON.parse('{{projects|safe}}');
+            window.grid_width = 3;
+            window.gridArray = makeGrid(projects.length, grid_width);
+            window.projectsGrid = dataToGridArray(projects, gridArray, grid_width);
         }());
     </script>
-    <script src="{% static 'scripts/make_grid_function.js' %}"></script>
     <script src="{% static 'scripts/resume_grid_layout.js' %}"></script>
-    <script>
-        /*
-        // declarations, svg setup
-        var projects = JSON.parse('{{projects|safe}}');
-        var svg_height = 800;
-        var svg_width = 600;
-        var panel_width = 80;
-        var svg = d3.select('#my_grid').append('svg')
-            .attr('height', svg_height).attr('width', svg_width);
-
-        // create groups
-        var panels = svg.selectAll('g')
-            .data(projects).enter().append('g');
-
-        // add title to grid
-        var title = panels.append('text')
-            .attr('font-size', '1em')
-            .text(function(d) { return d.name; })
-            .attr('x', function(d,i) {
-                return i * 150;
-            }).attr('y', 10);
-
-        // add image
-        var image = panels.append('svg:image')
-            .attr('xlink:href', function(d) {
-                return d.img;
-            })
-            .attr('width', 300)
-            .attr('height', 150)
-            .attr('x', function(d,i) {
-                return i * 150;
-            }).attr('y', 20)
-            .attr('preserveAspectRatio', 'xMinYMax');
-        */
-        // add panels
-        var panels = grid.selectAll('g')
-            .data(projects).enter().append('g');
-
-        // add image to each rect from the grid layout
-        var image = panels.append('svg:image')
-            .attr('xlink:href', function(d) {
-                return d.img;
-            })
-            .attr('width', 300)
-            .attr('height', 150)
-            .attr('x', function(d,i) {
-                return i * 150;
-            }).attr('y', 20)
-            .attr('preserveAspectRatio', 'xMinYMax');
-
-    </script>
 
 {% include 'partials/footer_resume.html' %}
