@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import TechSkills, GeneralSkills, WorkExperience, WorkDescriptions, Education
 import json
 from django.forms.models import model_to_dict
+from .forms import CaptchaContactForm
 import decimal
 
 
@@ -32,7 +33,18 @@ def about_me(request):
 # contact me page
 def contact_me(request):
 
-    return render(request, 'pages/contactMe.html')
+    form = CaptchaContactForm()
+
+    if request.method == 'POST':
+        form = CaptchaContactForm(request.POST)
+        if form.is_valid():
+            print("Success")
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'pages/contactMe.html', context)
 
 
 # skills testing page

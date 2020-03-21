@@ -3,6 +3,12 @@
         <h1>CONTACT ME</h1>
     </div><br>
 
+    <form action="/contact_me/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send">
+    </form>
+
     
 
 {% include 'partials/footer_resume.html' %}
