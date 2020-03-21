@@ -23,6 +23,18 @@ def homepage(request):
     return render(request, 'pages/me.html', context)
 
 
+# about me page
+def about_me(request):
+
+    return render(request, 'pages/aboutMe.html')
+
+
+# contact me page
+def contact_me(request):
+
+    return render(request, 'pages/contactMe.html')
+
+
 # skills testing page
 def show_skills(request):
 
