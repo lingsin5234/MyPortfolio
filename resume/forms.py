@@ -1,14 +1,13 @@
 from django import forms
-# from contact_form.forms import ContactForm
+from .models import ContactMe
 from captcha.fields import CaptchaField
 
 
-class CaptchaContactForm(forms.Form):
-    """
-    ContactForm subclass to add captcha protection.
+class CaptchaContactForm(forms.ModelForm):
 
-    """
-    name = forms.CharField(max_length=30)
-    email = forms.EmailField()
     message = forms.CharField(max_length=500, widget=forms.Textarea)
     captcha = CaptchaField(help_text="(case insensitive)")
+
+    class Meta:
+        model = ContactMe
+        fields = ['name', 'email', 'message', 'captcha']
