@@ -67,3 +67,13 @@ class GeneralSkills(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# Contact Me
+class ContactMe(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    message = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name

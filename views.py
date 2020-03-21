@@ -38,6 +38,7 @@ def contact_me(request):
     if request.method == 'POST':
         form = CaptchaContactForm(request.POST)
         if form.is_valid():
+            form.save()
             print("Success")
 
     context = {
