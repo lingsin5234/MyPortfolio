@@ -51,12 +51,15 @@ def contact_me(request):
 # project page
 def project_markdown(request):
 
+    page_height = 1050
     f = open('README.md', 'r')
     if f.mode == 'r':
         readme = f.read()
+        page_height = len(readme) - 350
 
     content = {
-        'readme': readme
+        'readme': readme,
+        'page_height': page_height
     }
 
     return render(request, 'pages/project.html', content)
