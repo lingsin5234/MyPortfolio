@@ -1,0 +1,13 @@
+{% include 'partials/header_resume.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>PROJECT: Resume</h1>
+    </div><br>
+
+    {% load markdown_extras %}
+    <div id="my_descriptions" class="d-flex justify-content-center">
+        <div>
+            {{ readme | markdown | safe }}
+        </div>
+    </div>
+
+{% include 'partials/footer_resume.html' %}

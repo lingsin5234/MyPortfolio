@@ -48,6 +48,20 @@ def contact_me(request):
     return render(request, 'pages/contactMe.html', context)
 
 
+# project page
+def project_markdown(request):
+
+    f = open('README.md', 'r')
+    if f.mode == 'r':
+        readme = f.read()
+
+    content = {
+        'readme': readme
+    }
+
+    return render(request, 'pages/project.html', content)
+
+
 # skills testing page
 def show_skills(request):
 
