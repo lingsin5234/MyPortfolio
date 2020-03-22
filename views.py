@@ -52,7 +52,7 @@ def contact_me(request):
 def project_markdown(request):
 
     page_height = 1050
-    f = open('README.md', 'r')
+    f = open('resume/README.md', 'r')
     if f.mode == 'r':
         readme = f.read()
         page_height = len(readme) - 350
