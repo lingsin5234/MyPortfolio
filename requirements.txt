@@ -1,6 +1,7 @@
 asgiref==3.2.3
 click==7.1.1
 Django==3.0.4
+django-adminrestrict==2.0.2
 django-contact-form==1.8.1
 django-crispy-forms==1.9.0
 django-ranged-response==0.2.0
