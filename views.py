@@ -4,6 +4,9 @@ import json
 from django.forms.models import model_to_dict
 from .forms import CaptchaContactForm
 import decimal
+from django.template.loader import select_template, get_template
+from djangoapps.settings import BASE_DIR
+from djangoapps.utils import get_this_template
 
 
 # homepage
@@ -12,7 +15,7 @@ def homepage(request):
     # give temporary data for projects
     projects = [
         {'id': 1, 'name': 'Resume', 'img': 'static/img/writing.jpg', 'link': 'resume/'},
-        {'id': 2, 'name': 'Baseball', 'img': 'static/img/baseball.jpg', 'link': 'baseball/runJobs/'},
+        {'id': 2, 'name': 'Baseball', 'img': 'static/img/baseball.jpg', 'link': 'baseball/'},
         {'id': 3, 'name': 'Budget Demo', 'img': 'static/img/piggybank.jpg', 'link': 'budget/'}
         # {'id': 4, 'name': 'Weather Data', 'img': 'static/img/noaa.jpg', 'link': '#'}
     ]
@@ -62,7 +65,9 @@ def project_markdown(request):
         'page_height': page_height
     }
 
-    return render(request, 'pages/project.html', content)
+    template_page = get_this_template('resume', 'project.html')
+
+    return render(request, template_page, content)
 
 
 # skills testing page
@@ -181,3 +186,21 @@ def show_workexp(request):
 def blank(request):
 
     return render(request, 'pages/multidimensionarray.html')
+
+
+# template testing
+def django_templates(request):
+
+    temp1 = get_template('pages/project.html')
+    temp2 = select_template(['pages/project.html'])
+    print(type(temp1))
+    # print(temp1.app_dirname)
+    print(type(temp2))
+    print(BASE_DIR)
+
+    context = {
+        'temp1': temp1,
+        'temp2': temp2
+    }
+
+    return render(request, 'pages/django_templates.html', context)
