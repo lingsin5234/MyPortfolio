@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import TechSkills, GeneralSkills, WorkExperience, WorkDescriptions, Education
+from .models import TechSkills, GeneralSkills, WorkExperience, WorkDescriptions, Education, Qualifications
 import json
 from django.forms.models import model_to_dict
 from .forms import CaptchaContactForm
@@ -95,6 +95,7 @@ def show_resume(request):
     edus = Education.objects.all().order_by('-end_year')
     works = WorkExperience.objects.all().order_by('-start_year')
     workds = WorkDescriptions.objects.all()
+    quali = Qualifications.objects.all().order_by('order')
 
     # declare lists
     tech_skills = []
@@ -102,6 +103,7 @@ def show_resume(request):
     education = []
     work_exp = []
     work_desc = []
+    qualification = []
 
     # find max desc
     max_desc = 0
@@ -116,6 +118,9 @@ def show_resume(request):
     for e in edus:
         add = model_to_dict(e)
         education.append(add)
+    for q in quali:
+        add = model_to_dict(q)
+        qualification.append(add)
 
     # special treatment for work_desc and work_exp
     for d in workds:
@@ -140,6 +145,7 @@ def show_resume(request):
         'education': json.dumps(education),
         'work_exp': json.dumps(work_exp),
         'work_desc': json.dumps(work_desc),
+        'qualification': json.dumps(qualification),
         'max_desc': max_desc
     }
 
