@@ -8,6 +8,7 @@
     <div id="startContent" class="container-fluid d-flex justify-content-center">
         <div class="d-flex flex-column">
             <h3>HIGHLIGHTS OF QUALIFICATION</h3><hr>
+            <div id="qualification"></div>
             <h3>WORK EXPERIENCE</h3><hr>
             <div id="work_exp"></div>
             <h3>TECHNICAL SKILLS</h3><hr>
@@ -27,12 +28,14 @@
             window.tech_skills = JSON.parse('{{tech_skills|safe}}');
             window.gen_skills = JSON.parse('{{gen_skills|safe}}');
             window.education = JSON.parse('{{education|safe}}');
+            window.qualification = JSON.parse('{{qualification|safe}}');
             window.max_desc = {{max_desc}};
         }());
 </script>
 <script src="{% static 'scripts/resume_work_exp.js' %}"></script>
 <script src="{% static 'scripts/resume_tech_skills.js' %}"></script>
 <script src="{% static 'scripts/resume_education.js' %}"></script>
+<script src="{% static 'scripts/resume_qualification.js' %}"></script>
 
 </body>
 {% include 'partials/footer_resume.html' %}

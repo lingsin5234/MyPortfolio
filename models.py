@@ -69,11 +69,20 @@ class GeneralSkills(models.Model):
         return self.name
 
 
+# Highlights
+class Qualifications(models.Model):
+    highlight = models.TextField(max_length=100)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return self.highlight
+
+
 # Contact Me
 class ContactMe(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField()
-    message = models.CharField(max_length=500)
+    message = models.TextField(max_length=500)
 
     def __str__(self):
         return self.name
