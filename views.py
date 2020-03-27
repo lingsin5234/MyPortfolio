@@ -62,7 +62,7 @@ def project_markdown(request):
     f = open('resume/README.md', 'r')
     if f.mode == 'r':
         readme = f.read()
-        page_height = len(readme) - 350
+        page_height = len(readme) - 325
 
     content = {
         'readme': readme,

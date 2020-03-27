@@ -30,9 +30,7 @@ be expanded on as skills and experiences are accumulated.
 ## Credits
 Photo Credits are included below:
 
-*  baseball.jpg - Photo by Matthew T Rader on Unsplash
-*  piggybank.jpg - Photo by Fabian Blank on Unsplash
-*  writing.jpg - Photo by Helloquence on Unsplash
-*  noaa.jpg - Photo by NOAA on Unsplash
-
-Template colour scheme: https://www.awwwards.com/sites/panera-land-of-clean
+*  [Baseball](/static/img/baseball.jpg) - Photo by Matthew T Rader on Unsplash
+*  [Piggy Bank](/static/img/piggybank.jpg) - Photo by Fabian Blank on Unsplash
+*  [Writing](/static/img/writing.jpg) - Photo by Helloquence on Unsplash
+*  [NOAA](/static/img/noaa.jpg) - Photo by NOAA on Unsplash
