@@ -34,5 +34,3 @@ Photo Credits are included below:
 *  [Piggy Bank](/static/img/piggybank.jpg) - Photo by Fabian Blank on Unsplash
 *  [Writing](/static/img/writing.jpg) - Photo by Helloquence on Unsplash
 *  [NOAA](/static/img/noaa.jpg) - Photo by NOAA on Unsplash
-
-Template colour scheme: [RESN](https://www.awwwards.com/sites/panera-land-of-clean)
