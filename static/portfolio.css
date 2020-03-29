@@ -1,0 +1,68 @@
+.cls-1 {
+    clip-path: url(#clip-Portfolio);
+}
+
+.cls-2, .cls-5, .cls-9 {
+    fill: #222d8e;
+}
+
+.cls-2 {
+    font-size: 26px;
+}
+
+.cls-11, .cls-2, .cls-4, .cls-6, .cls-7, .cls-9 {
+    font-family: BerlinSansFB-Reg, Berlin Sans FB;
+}
+
+.cls-14, .cls-3 {
+    fill: #fff;
+}
+
+.cls-3 {
+    stroke: #707070;
+}
+
+.cls-4 {
+    fill: #585665;
+}
+
+.cls-11, .cls-4, .cls-5, .cls-6, .cls-7 {
+    font-size: 20px;
+}
+
+.cls-5 {
+    font-family: BerlinSansFBDemi-Bold, Berlin Sans FB;
+    font-weight: 700;
+}
+
+.cls-6 {
+    fill: #422fbd;
+}
+
+.cls-7 {
+    fill: #f4501d;
+}
+
+.cls-8 {
+    fill: url(#pattern);
+}
+
+.cls-9 {
+    font-size: 30px;
+}
+
+.cls-10 {
+    fill: url(#pattern-2);
+}
+
+.cls-11 {
+    fill: #707070;
+}
+
+.cls-12 {
+    stroke: none;
+}
+
+.cls-13 {
+    fill: none;
+}
