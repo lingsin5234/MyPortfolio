@@ -153,7 +153,7 @@ def show_resume(request):
         'max_desc': max_desc
     }
 
-    return render(request, 'pages/resume.html', context)
+    return render(request, 'pages/portfolio.html', context)
 
 
 # show work exp test view
