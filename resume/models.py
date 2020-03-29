@@ -78,6 +78,19 @@ class Qualifications(models.Model):
         return self.highlight
 
 
+# Projects
+class ProjectExperience(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=250)
+    start_year = models.IntegerField()
+    start_month = models.CharField(max_length=3, choices=MONTHS)
+    end_year = models.IntegerField(null=True)
+    end_month = models.CharField(max_length=3, choices=MONTHS, null=True)
+
+    def __str__(self):
+        return str(self.name) + ': ' + str(self.start_year)
+
+
 # Contact Me
 class ContactMe(models.Model):
     name = models.CharField(max_length=30)

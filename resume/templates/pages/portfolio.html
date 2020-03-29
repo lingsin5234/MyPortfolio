@@ -27,34 +27,19 @@
             <text id="Work_Experience" data-name="Work Experience" class="cls-2" transform="translate(25 380)"><tspan x="0" y="23">Work Experience</tspan></text>
             <g id="work-experience" transform="translate(-435 330)"></g>
 
-            <text id="Education" class="cls-2" transform="translate(25 1352)"><tspan x="0" y="23">Education</tspan></text>
+            <text id="Education-txt" class="cls-2" transform="translate(25 1352)"><tspan x="0" y="23">Education</tspan></text>
             <g id="education" data-name="education">
 
             </g>
 
-            <text id="Projects" class="cls-2" transform="translate(25 1000)"><tspan x="0" y="23">Projects</tspan></text>
-            <g id="projects-2" data-name="projects">
-              <g id="Rectangle_7-2" data-name="Rectangle 7" class="cls-3" transform="translate(25 1050)">
-                <rect class="cls-12" width="1030" height="313" rx="24"/>
-                <rect class="cls-13" x="0.5" y="0.5" width="1029" height="312" rx="23.5"/>
-              </g>
-              <g id="Group_24" data-name="Group 24">
-                <text id="WWW_2020-6" data-name="WWW 2020" class="cls-4" transform="translate(50 1014)"><tspan x="0" y="18">WWW 2020</tspan></text>
-                <text id="Baseball_Play-by-Play_Stats" data-name="Baseball Play-by-Play Stats" class="cls-5" transform="translate(182 1014)"><tspan x="0" y="18">Baseball Play-by-Play Stats</tspan></text>
-                <text id="_4_Years-3" data-name="4 Years" class="cls-6" transform="translate(464 1014)"><tspan x="0" y="18">4 Years</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-10" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1048)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-11" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1078)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-12" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1108)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-              </g>
-              <g id="Group_25" data-name="Group 25" transform="translate(0 144)">
-                <text id="WWW_2020-7" data-name="WWW 2020" class="cls-4" transform="translate(50 1014)"><tspan x="0" y="18">WWW 2020</tspan></text>
-                <text id="Baseball_Play-by-Play_Stats-2" data-name="Baseball Play-by-Play Stats" class="cls-5" transform="translate(182 1014)"><tspan x="0" y="18">Baseball Play-by-Play Stats</tspan></text>
-                <text id="_4_Years-4" data-name="4 Years" class="cls-7" transform="translate(464 1014)"><tspan x="0" y="18">4 Years</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-13" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1048)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-14" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1078)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-                <text id="Lorem_ipsum_dolor_sit_amet_consetetur-15" data-name="Lorem ipsum dolor sit amet, consetetur" class="cls-4" transform="translate(182 1108)"><tspan x="0" y="18">Lorem ipsum dolor sit amet, consetetur</tspan></text>
-              </g>
+            <text id="Projects-txt" class="cls-2" transform="translate(25 1000)"><tspan x="0" y="23">Projects</tspan></text>
+            <g id="projects" data-name="projects">
+
             </g>
+
+
+
+
             <g id="personal">
               <g id="Rectangle_1-2" data-name="Rectangle 1" class="cls-3" transform="translate(25 75)">
                 <rect class="cls-12" width="1030" height="255" rx="24"/>
@@ -179,6 +164,7 @@
             window.gen_skills = JSON.parse('{{gen_skills|safe}}');
             window.education = JSON.parse('{{education|safe}}');
             window.qualification = JSON.parse('{{qualification|safe}}');
+            window.projects = JSON.parse('{{projects|safe}}');
             window.max_desc = {{max_desc}};
         }());
 </script>
@@ -186,6 +172,7 @@
 <script src="{% static 'scripts/resume_tech_skills.js' %}"></script>
 <script src="{% static 'scripts/resume_education.js' %}"></script>
 <script src="{% static 'scripts/resume_qualification.js' %}"></script>
+<script src="{% static 'scripts/resume_projects.js' %}"></script>
 
 </body>
 {% include 'partials/footer_resume.html' %}
