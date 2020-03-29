@@ -46,7 +46,7 @@ class WorkExperience(models.Model):
 # Work Descriptions
 class WorkDescriptions(models.Model):
     job = models.ForeignKey(WorkExperience, on_delete=models.SET_NULL, null=True, default=None)
-    description = models.CharField(max_length=250)
+    description = models.TextField(max_length=250)
 
     def __str__(self):
         return str(self.job) + ' - ' + self.description[0:99] + ' ...'
