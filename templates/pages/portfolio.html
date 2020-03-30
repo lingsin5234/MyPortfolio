@@ -55,8 +55,9 @@
             window.edu_height = 75;
             window.edu_box_height = num_edu * edu_height + 50;
             window.tech_start = edu_start + 50 + edu_box_height + 50;
-            window.num_skills = Math.ceil(tech_skills.length / 3);
-            window.tech_box_height = num_skills * 60;
+            window.num_skills = Math.ceil(tech_skills.length / 4);
+            window.tech_box_height = num_skills * 60 + 50;
+            window.skill_height = 60;
         }());
 </script>
 <script src="{% static 'scripts/resume_work_exp.js' %}"></script>
