@@ -21,23 +21,15 @@
               <rect width="1080" height="1920"/>
             </clipPath>
           </defs>
-          <g id="Portfolio" class="cls-1">
+          <g id="portfolio" class="cls-1">
             <rect class="cls-14" width="1080" height="1920"/>
             <text id="Personal_Info" data-name="Personal Info" class="cls-2" transform="translate(25 25)"><tspan x="0" y="23">Personal Info</tspan></text>
-            <text id="Work_Experience" data-name="Work Experience" class="cls-2" transform="translate(25 380)"><tspan x="0" y="23">Work Experience</tspan></text>
-            <g id="work-experience" transform="translate(-435 330)"></g>
 
-            <text id="Education-txt" class="cls-2" transform="translate(25 1352)"><tspan x="0" y="23">Education</tspan></text>
+
+            <text id="Education-txt" class="cls-2" transform="translate(25 1450)"><tspan x="0" y="23">Education</tspan></text>
             <g id="education" data-name="education">
 
             </g>
-
-            <text id="Projects-txt" class="cls-2" transform="translate(25 1000)"><tspan x="0" y="23">Projects</tspan></text>
-            <g id="projects" data-name="projects">
-
-            </g>
-
-
 
 
             <g id="personal">
@@ -165,7 +157,15 @@
             window.education = JSON.parse('{{education|safe}}');
             window.qualification = JSON.parse('{{qualification|safe}}');
             window.projects = JSON.parse('{{projects|safe}}');
+
+            // dimensions declarations shared amongst the javascript files
+            window.work_exp_start = 380;  // starting point reference of work exp block
             window.max_desc = {{max_desc}};
+            window.desc_height = max_desc * 22 + 75;
+            window.num_work = work_exp.length;
+            window.work_box_height = desc_height * num_work + 75;
+            window.xt = 25;  // minimum left-margin
+            window.project_start = work_exp_start + 50 + work_box_height + 50;
         }());
 </script>
 <script src="{% static 'scripts/resume_work_exp.js' %}"></script>
