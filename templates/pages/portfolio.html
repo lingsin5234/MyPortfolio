@@ -10,27 +10,17 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'portfolio.css' %}">
         <!--object data="{% static 'portfolio.svg' %}"></object-->
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920">
+        <svg width="1080" height="2048" viewBox="0 0 1080 2048">
             <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 532 532">
                 <image width="532" height="532" xlink:href="{% static 'img/me.jpg' %}"/>
             </pattern>
             <pattern id="pattern-2" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 112 126">
-                <image width="112" height="126" xlink:href=""/>
+                <image width="112" height="126" xlink:href="{% static 'img/linkedin.jpg' %}"/>
             </pattern>
-            <clipPath id="clip-Portfolio">
-              <rect width="1080" height="1920"/>
-            </clipPath>
           </defs>
           <g id="portfolio" class="cls-1">
-            <rect class="cls-14" width="1080" height="1920"/>
+            <rect class="cls-14" width="1080" height="2048"/>
             <text id="Personal_Info" data-name="Personal Info" class="cls-2" transform="translate(25 25)"><tspan x="0" y="23">Personal Info</tspan></text>
-
-
-            <text id="Education-txt" class="cls-2" transform="translate(25 1450)"><tspan x="0" y="23">Education</tspan></text>
-            <g id="education" data-name="education">
-
-            </g>
-
 
             <g id="personal">
               <g id="Rectangle_1-2" data-name="Rectangle 1" class="cls-3" transform="translate(25 75)">
@@ -122,25 +112,6 @@
                 </g>
               </g>
             </g>
-            <text id="Technical_Skills" data-name="Technical Skills" class="cls-2" transform="translate(25 1644)"><tspan x="0" y="23">Technical Skills</tspan></text>
-            <g id="tech-skills" transform="translate(0 292)">
-              <g id="Rectangle_7-3" data-name="Rectangle 7" class="cls-3" transform="translate(25 1402)">
-                <rect class="cls-12" width="1030" height="192" rx="24"/>
-                <rect class="cls-13" x="0.5" y="0.5" width="1029" height="191" rx="23.5"/>
-              </g>
-              <g id="Group_22-2" data-name="Group 22" transform="translate(50 1427)">
-                <text id="WWW_2020-8" data-name="WWW 2020" class="cls-11"><tspan x="0" y="18">WWW 2020</tspan></text>
-                <text id="Bachelor_of_Applied_Sciences_-_University_of_Toronto-3" data-name="Bachelor of Applied Sciences - University of Toronto" class="cls-5" transform="translate(132)"><tspan x="0" y="18">Bachelor of Applied Sciences - University of Toronto</tspan></text>
-                <text id="Electrical_Engineering-3" data-name="Electrical Engineering" class="cls-4" transform="translate(132 34)"><tspan x="0" y="18">Electrical Engineering</tspan></text>
-                <text id="_4_Years-5" data-name="4 Years" class="cls-6" transform="translate(602)"><tspan x="0" y="18">4 Years</tspan></text>
-              </g>
-              <g id="Group_23-2" data-name="Group 23" transform="translate(50 1511)">
-                <text id="WWW_2020-9" data-name="WWW 2020" class="cls-11"><tspan x="0" y="18">WWW 2020</tspan></text>
-                <text id="Bachelor_of_Applied_Sciences_-_University_of_Toronto-4" data-name="Bachelor of Applied Sciences - University of Toronto" class="cls-5" transform="translate(132)"><tspan x="0" y="18">Bachelor of Applied Sciences - University of Toronto</tspan></text>
-                <text id="Electrical_Engineering-4" data-name="Electrical Engineering" class="cls-4" transform="translate(132 34)"><tspan x="0" y="18">Electrical Engineering</tspan></text>
-                <text id="_4_Years-6" data-name="4 Years" class="cls-6" transform="translate(602)"><tspan x="0" y="18">4 Years</tspan></text>
-              </g>
-            </g>
           </g>
         </svg>
     </div>
@@ -150,7 +121,8 @@
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script>
     (function () {
-            window.box_width = 800;
+            window.all_box_width = 1030;
+            window.all_box_curve = 24;
             window.work_exp = JSON.parse('{{ work_exp|safe }}');
             window.tech_skills = JSON.parse('{{tech_skills|safe}}');
             window.gen_skills = JSON.parse('{{gen_skills|safe}}');
@@ -166,6 +138,16 @@
             window.work_box_height = desc_height * num_work + 75;
             window.xt = 25;  // minimum left-margin
             window.project_start = work_exp_start + 50 + work_box_height + 50;
+            window.num_proj = projects.length;
+            window.proj_height = 120;
+            window.proj_box_height = num_proj * proj_height + 50;
+            window.edu_start = project_start + 50 + proj_box_height + 50;
+            window.num_edu = education.length;
+            window.edu_height = 75;
+            window.edu_box_height = num_edu * edu_height + 50;
+            window.tech_start = edu_start + 50 + edu_box_height + 50;
+            window.num_skills = Math.ceil(tech_skills.length / 3);
+            window.tech_box_height = num_skills * 60;
         }());
 </script>
 <script src="{% static 'scripts/resume_work_exp.js' %}"></script>
