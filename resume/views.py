@@ -155,7 +155,7 @@ def show_resume(request):
         'education': json.dumps(education),
         'work_exp': json.dumps(work_exp),
         'work_desc': json.dumps(work_desc),
-        'qualification': json.dumps(qualification),
+        # 'qualification': json.dumps(qualification),
         'projects': json.dumps(projects),
         'max_desc': max_desc
     }
