@@ -10,16 +10,7 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'portfolio.css' %}">
         <!--object data="{% static 'portfolio.svg' %}"></object-->
-        <svg width="1080" height="2048" viewBox="0 0 1080 2048">
-            <rect class="cls-14" width="1080" height="2048"/>
-            <pattern id="my-picture" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 532 532">
-                <image width="532" height="532" xlink:href="{% static 'img/me.jpg' %}"/>
-            </pattern>
-            <pattern id="linkedin" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 112 126">
-                <image width="112" height="126" xlink:href="{% static 'img/linkedin.jpg' %}"/>
-            </pattern>
-            <g id="portfolio" class="cls-1"></g>
-        </svg>
+
     </div>
     <br>
 
@@ -38,29 +29,36 @@
             window.projects = JSON.parse('{{projects|safe}}');
 
             // dimensions declarations shared amongst the javascript files
+            window.word_wrap_cap = 95;
+            window.xt = 25;  // minimum left-margin
             window.info_start = 25;
             window.info_box_height = 255;
             window.work_exp_start = info_start + 50 + info_box_height + 50;
-            window.max_desc = {{max_desc}};
-            window.desc_height = max_desc * 22 + 75;
+            window.max_work_desc = {{max_work_desc}};
+            window.each_work_height = max_work_desc * 30 + xt;
             window.num_work = work_exp.length;
-            window.work_box_height = desc_height * num_work + 75;
-            window.xt = 25;  // minimum left-margin
+            window.work_box_height = each_work_height * num_work + 75;
             window.project_start = work_exp_start + 50 + work_box_height + 50;
             window.num_proj = projects.length;
-            window.proj_height = 120;
-            window.proj_box_height = num_proj * proj_height + 50;
+            window.max_proj_desc = {{max_proj_desc}};
+            window.proj_height = Math.ceil(max_proj_desc / word_wrap_cap ) * 30 + 40;
+            window.proj_box_height = num_proj * proj_height + 35;
             window.edu_start = project_start + 50 + proj_box_height + 50;
             window.num_edu = education.length;
-            window.edu_height = 75;
-            window.edu_box_height = num_edu * edu_height + 50;
+            window.edu_height = 80;
+            window.edu_box_height = num_edu * edu_height + 35;
             window.tech_start = edu_start + 50 + edu_box_height + 50;
             window.num_skills = Math.ceil(tech_skills.length / 4);
             window.tech_box_height = num_skills * 60 + 50;
             window.skill_height = 60;
+
+            // set svg dimensions
+            window.svg_width = 1080;
+            window.svg_height = tech_start + tech_box_height + 75;
         }());
 </script>
 <script src="{% static 'scripts/word_wrap_function.js' %}"></script>
+<script src="{% static 'scripts/resume_setup.js' %}"></script>
 <script src="{% static 'scripts/resume_work_exp.js' %}"></script>
 <script src="{% static 'scripts/resume_tech_skills.js' %}"></script>
 <script src="{% static 'scripts/resume_education.js' %}"></script>

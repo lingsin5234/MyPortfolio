@@ -112,8 +112,9 @@ def show_resume(request):
     qualification = []
     projects = []
 
-    # find max desc
-    max_desc = 0
+    # find max desc for work and proj
+    max_work_desc = 0
+    max_proj_desc = 0
 
     # convert all models to dict for JSON
     for t in techs:
@@ -130,6 +131,9 @@ def show_resume(request):
         qualification.append(add)
     for p in proj:
         add = model_to_dict(p)
+        indv_wd = add['description']
+        if len(indv_wd) > max_proj_desc:
+            max_proj_desc = len(indv_wd)
         projects.append(add)
 
     # special treatment for work_desc and work_exp
@@ -143,8 +147,8 @@ def show_resume(request):
         indv_wd = [d['description'] for d in work_desc if d['job'] == w.id]
         if len(indv_wd) > 0:
             add['work_desc'] = indv_wd
-            if len(indv_wd) > max_desc:
-                max_desc = len(indv_wd)
+            if len(indv_wd) > max_work_desc:
+                max_work_desc = len(indv_wd)
         else:
             add['work_desc'] = [""]
         work_exp.append(add)
@@ -157,7 +161,8 @@ def show_resume(request):
         'work_desc': json.dumps(work_desc),
         # 'qualification': json.dumps(qualification),
         'projects': json.dumps(projects),
-        'max_desc': max_desc
+        'max_work_desc': max_work_desc,
+        'max_proj_desc': max_proj_desc
     }
 
     return render(request, 'pages/portfolio.html', context)
