@@ -84,8 +84,8 @@ class ProjectExperience(models.Model):
     description = models.TextField(max_length=250)
     start_year = models.IntegerField()
     start_month = models.CharField(max_length=3, choices=MONTHS)
-    end_year = models.IntegerField(null=True)
-    end_month = models.CharField(max_length=3, choices=MONTHS, null=True)
+    end_year = models.IntegerField(blank=True, null=True)
+    end_month = models.CharField(max_length=3, choices=MONTHS, blank=True, null=True)
 
     def __str__(self):
         return str(self.name) + ': ' + str(self.start_year)
