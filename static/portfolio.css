@@ -10,9 +10,9 @@
     font-size: 26px;
 }
 
-.cls-11, .cls-2, .cls-4, .cls-6, .cls-7, .cls-9 {
+/*.cls-11, .cls-2, .cls-4, .cls-6, .cls-7, .cls-9 {
     font-family: BerlinSansFB-Reg, Berlin Sans FB;
-}
+}*/
 
 .cls-14, .cls-3 {
     fill: #fff;
@@ -31,7 +31,7 @@
 }
 
 .cls-5 {
-    font-family: BerlinSansFBDemi-Bold, Berlin Sans FB;
+    /*font-family: BerlinSansFBDemi-Bold, Berlin Sans FB;*/
     font-weight: 700;
 }
 
