@@ -101,7 +101,7 @@ def show_resume(request):
     works = WorkExperience.objects.all().order_by('-start_year')
     workds = WorkDescriptions.objects.all()
     quali = Qualifications.objects.all().order_by('order')
-    proj = ProjectExperience.objects.all()
+    proj = ProjectExperience.objects.all().order_by('-start_year', '-start_month')
 
     # declare lists
     tech_skills = []
