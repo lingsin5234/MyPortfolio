@@ -1,0 +1,14 @@
+{% include 'partials/header_resume.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>PAGE NOT FOUND</h1>
+    </div><br>
+
+    <div class="d-flex justify-content-center">
+        <div>
+            {% load static %}
+            <img src="{% static 'img/youre_out.jpg' %}" style="width:300px;height:auto;">
+            <h3>YOU'RE OUT!</h3>
+            <p>This page is not found.</p>
+        </div>
+    </div>
+{% include 'partials/footer_resume.html' %}
