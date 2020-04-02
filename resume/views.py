@@ -99,7 +99,7 @@ def show_resume(request):
     gens = GeneralSkills.objects.all().order_by('name')
     edus = Education.objects.all().order_by('-end_year')
     works = WorkExperience.objects.all().order_by('-start_year')
-    workds = WorkDescriptions.objects.all()
+    workds = WorkDescriptions.objects.all().order_by('id')
     quali = Qualifications.objects.all().order_by('order')
     proj = ProjectExperience.objects.all().order_by('-start_year', '-start_month')
 
