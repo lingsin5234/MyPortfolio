@@ -22,9 +22,9 @@ class Education(models.Model):
     cert = models.CharField(max_length=30)
     major = models.CharField(max_length=50, null=True)
     start_year = models.IntegerField()
-    start_month = models.CharField(max_length=3, choices=MONTHS)
+    start_month = models.IntegerField(choices=MONTHS)
     end_year = models.IntegerField(blank=True, null=True)
-    end_month = models.CharField(max_length=3, choices=MONTHS, blank=True, null=True)
+    end_month = models.IntegerField(choices=MONTHS, blank=True, null=True)
 
     def __str__(self):
         return self.school
@@ -35,9 +35,9 @@ class WorkExperience(models.Model):
     company = models.CharField(max_length=50)
     title = models.CharField(max_length=30)
     start_year = models.IntegerField()
-    start_month = models.CharField(max_length=3, choices=MONTHS)
+    start_month = models.IntegerField(choices=MONTHS)
     end_year = models.IntegerField(blank=True, null=True)
-    end_month = models.CharField(max_length=3, choices=MONTHS, blank=True, null=True)
+    end_month = models.IntegerField(choices=MONTHS, blank=True, null=True)
 
     def __str__(self):
         return self.company + ': ' + self.title
@@ -83,9 +83,9 @@ class ProjectExperience(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=250)
     start_year = models.IntegerField()
-    start_month = models.CharField(max_length=3, choices=MONTHS)
+    start_month = models.IntegerField(choices=MONTHS)
     end_year = models.IntegerField(blank=True, null=True)
-    end_month = models.CharField(max_length=3, choices=MONTHS, blank=True, null=True)
+    end_month = models.IntegerField(choices=MONTHS, blank=True, null=True)
 
     def __str__(self):
         return str(self.name) + ': ' + str(self.start_year)
