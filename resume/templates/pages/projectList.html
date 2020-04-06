@@ -1,0 +1,20 @@
+{% include 'partials/header_resume.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>My Projects</h1>
+    </div><br>
+
+    <div id="my_grid" class="d-flex justify-content-center"></div>
+
+    {% load static %}
+    <script src="{% static 'scripts/make_grid_function.js' %}"></script>
+    <script>
+        (function() {
+            window.projects = JSON.parse('{{projects|safe}}');
+            window.grid_width = 3;
+            window.gridArray = makeGrid(projects.length, grid_width);
+            window.projectsGrid = dataToGridArray(projects, gridArray, grid_width);
+        }());
+    </script>
+    <script src="{% static 'scripts/resume_grid_layout.js' %}"></script>
+
+{% include 'partials/footer_resume.html' %}
