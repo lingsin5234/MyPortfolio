@@ -10,9 +10,9 @@ My portfolio is created using Django along with a few key supporting python libr
 ## Layout
 This website is divided into the following pages:
 
-*  Main Page
-*  Resume
-*  Project
+*  Main Page - Resume
+*  My Projects
+*  Project (markdown)
 *  About Me
 *  Contact Me
 
