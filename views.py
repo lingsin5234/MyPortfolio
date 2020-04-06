@@ -32,6 +32,28 @@ def homepage(request):
     return render(request, 'pages/me.html', context)
 
 
+# projects list
+def projects_list(request):
+
+    # give temporary data for projects
+    projects = [
+        {'id': 1, 'name': 'Resume', 'img': '/static/img/writing.jpg', 'link': '/resume/'},
+        {'id': 2, 'name': 'Baseball', 'img': '/static/img/baseball.jpg', 'link': '/baseball/'},
+        {'id': 3, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
+        {'id': 4, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
+            'link': 'https://looneytoons.sinto-ling.ca'},
+        {'id': 5, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': '/'},
+        # {'id': 6, 'name': 'Wordpress - My Travels', 'img': 'static/img/looneytoons.jpg',
+        #  'link': 'https://travel.sinto-ling.ca'},
+    ]
+
+    context = {
+        'projects': json.dumps(projects)
+    }
+
+    return render(request, 'pages/me.html', context)
+
+
 # about me page
 def about_me(request):
 
