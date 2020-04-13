@@ -34,3 +34,4 @@ Photo Credits are included below:
 *  [Piggy Bank](/static/img/piggybank.jpg) - Photo by Fabian Blank on Unsplash
 *  [Writing](/static/img/writing.jpg) - Photo by Helloquence on Unsplash
 *  [NOAA](/static/img/noaa.jpg) - Photo by NOAA on Unsplash
+*  [Coding](/static/img/coding.jpg) - Photo by Fabian Grohs on Unsplash

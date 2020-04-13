@@ -10,7 +10,7 @@ from djangoapps.settings import BASE_DIR
 from djangoapps.utils import get_this_template
 
 
-# homepage
+# homepage - ###### DEFUNCT #######
 def homepage(request):
 
     # give temporary data for projects
@@ -21,7 +21,7 @@ def homepage(request):
         {'id': 4, 'name': 'Wordpress - Softball Team', 'img': 'static/img/looneytoons.jpg',
             'link': 'https://looneytoons.sinto-ling.ca'},
         {'id': 5, 'name': 'Coming Soon!', 'img': 'static/img/noaa.jpg', 'link': '/'},
-        # {'id': 6, 'name': 'Wordpress - My Travels', 'img': 'static/img/looneytoons.jpg',
+        # {'id': 7, 'name': 'Wordpress - My Travels', 'img': 'static/img/looneytoons.jpg',
         #  'link': 'https://travel.sinto-ling.ca'},
     ]
 
@@ -42,7 +42,8 @@ def projects_list(request):
         {'id': 3, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
         {'id': 4, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
             'link': 'https://looneytoons.sinto-ling.ca'},
-        {'id': 5, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': ''},
+        {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
+        {'id': 6, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': ''},
         # {'id': 6, 'name': 'Wordpress - My Travels', 'img': 'static/img/looneytoons.jpg',
         #  'link': 'https://travel.sinto-ling.ca'},
     ]
