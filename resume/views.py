@@ -43,9 +43,9 @@ def projects_list(request):
         {'id': 4, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
             'link': 'https://looneytoons.sinto-ling.ca'},
         {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
-        {'id': 6, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': ''},
-        # {'id': 6, 'name': 'Wordpress - My Travels', 'img': 'static/img/looneytoons.jpg',
-        #  'link': 'https://travel.sinto-ling.ca'},
+        {'id': 6, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'},
+        {'id': 7, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
+        {'id': 8, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': ''},
     ]
 
     context = {

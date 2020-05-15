@@ -35,3 +35,4 @@ Photo Credits are included below:
 *  [Writing](/static/img/writing.jpg) - Photo by Helloquence on Unsplash
 *  [NOAA](/static/img/noaa.jpg) - Photo by NOAA on Unsplash
 *  [Coding](/static/img/coding.jpg) - Photo by Fabian Grohs on Unsplash
+*  [Tutorial](/static/img/tutorial.jpg) - Photo by Markus Winkler on Unsplash
