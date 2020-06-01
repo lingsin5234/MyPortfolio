@@ -39,13 +39,13 @@ def projects_list(request):
     projects = [
         {'id': 1, 'name': 'Resume', 'img': '/static/img/writing.jpg', 'link': '/resume/'},
         {'id': 2, 'name': 'Baseball', 'img': '/static/img/baseball.jpg', 'link': '/baseball/'},
-        {'id': 3, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
+        {'id': 3, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
         {'id': 4, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
             'link': 'https://looneytoons.sinto-ling.ca'},
-        {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
+        {'id': 5, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
         {'id': 6, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'},
-        {'id': 7, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
-        {'id': 8, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': ''},
+        {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
+        {'id': 8, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': '/noaa/'},
     ]
 
     context = {
