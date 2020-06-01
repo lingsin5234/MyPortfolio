@@ -45,7 +45,7 @@ def projects_list(request):
         {'id': 5, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
         {'id': 6, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'},
         {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
-        {'id': 8, 'name': 'Coming Soon!', 'img': '/static/img/noaa.jpg', 'link': '/noaa/'},
+        {'id': 8, 'name': 'Weather', 'img': '/static/img/noaa.jpg', 'link': '/gsod/'},
     ]
 
     context = {
