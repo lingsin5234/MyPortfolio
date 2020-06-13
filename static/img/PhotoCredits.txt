@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/img/PhotoCredits.txt
+../../../../vscodeworkspace/static/img/PhotoCredits.txt

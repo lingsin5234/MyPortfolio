@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/scripts/resume/profile.js
+../../../../../vscodeworkspace/static/scripts/resume/profile.js

@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/scripts/resume/education.js
+../../../../../vscodeworkspace/static/scripts/resume/education.js

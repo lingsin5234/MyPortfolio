@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/scripts/resume/qualification.js
+../../../../../vscodeworkspace/static/scripts/resume/qualification.js

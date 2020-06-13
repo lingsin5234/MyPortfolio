@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/scripts/word_wrap_function.js
+../../../../vscodeworkspace/static/scripts/word_wrap_function.js

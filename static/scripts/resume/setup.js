@@ -1,1 +1,1 @@
-../../vscodeworkspace/static/scripts/resume/setup.js
+../../../../../vscodeworkspace/static/scripts/resume/setup.js
