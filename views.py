@@ -250,3 +250,22 @@ def django_templates(request):
     }
 
     return render(request, 'pages/django_templates.html', context)
+
+
+# photo credits page
+def photo_credits(request):
+
+    page_height = 1050
+    f = open('resume/PhotoCredits.md', 'r')
+    if f.mode == 'r':
+        readme = f.read()
+        page_height = len(readme)
+
+    content = {
+        'readme': readme,
+        'page_height': page_height
+    }
+
+    template_page = get_this_template('resume', 'photo-credits.html')
+
+    return render(request, template_page, content)
