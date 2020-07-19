@@ -46,6 +46,7 @@ def projects_list(request):
         {'id': 6, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'},
         {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
         {'id': 8, 'name': 'Weather', 'img': '/static/img/noaa.jpg', 'link': '/gsod/'},
+        {'id': 8, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg.jpg', 'link': '/statscan/'},
     ]
 
     context = {
