@@ -16,3 +16,5 @@ tutorial.jpg - Photo by Markus Winkler on Unsplash
 
 canada-bike.jpg - Photo by Ali Tawfiq on Unsplash
 
+electoral_map.png - Photo by MapBox on https://blog.mapbox.com/washington-posts-electoral-maps-how-we-built-it-b311ccecfa75
+
