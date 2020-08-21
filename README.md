@@ -28,11 +28,4 @@ The **Resume** page calls on models for work experience, technical skills and ed
 be expanded on as skills and experiences are accumulated.
 
 ## Credits
-Photo Credits are included below:
-
-*  [Baseball](/static/img/baseball.jpg) - Photo by Matthew T Rader on Unsplash
-*  [Piggy Bank](/static/img/piggybank.jpg) - Photo by Fabian Blank on Unsplash
-*  [Writing](/static/img/writing.jpg) - Photo by Helloquence on Unsplash
-*  [NOAA](/static/img/noaa.jpg) - Photo by NOAA on Unsplash
-*  [Coding](/static/img/coding.jpg) - Photo by Fabian Grohs on Unsplash
-*  [Tutorial](/static/img/tutorial.jpg) - Photo by Markus Winkler on Unsplash
+Photo Credits are found on the [Photo Credits](/photo-credits) page.
