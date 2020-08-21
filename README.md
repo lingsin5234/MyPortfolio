@@ -11,8 +11,8 @@ My portfolio is created using Django along with a few key supporting python libr
 This website is divided into the following pages:
 
 *  Main Page - Resume
-*  My Projects
-*  Project (markdown)
+*  My Projects & Blogs
+*  Portfolio Project Info (markdown)
 *  About Me
 *  Contact Me
 
