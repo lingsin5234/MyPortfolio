@@ -39,18 +39,22 @@ def projects_list(request):
     projects = [
         {'id': 1, 'name': 'Resume', 'img': '/static/img/writing.jpg', 'link': '/resume/'},
         {'id': 2, 'name': 'Baseball', 'img': '/static/img/baseball.jpg', 'link': '/baseball/'},
-        {'id': 3, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
-        {'id': 4, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
-            'link': 'https://looneytoons.sinto-ling.ca'},
-        {'id': 5, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
-        {'id': 6, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'},
+        {'id': 3, 'name': 'Weather', 'img': '/static/img/noaa.jpg', 'link': '/gsod/'},
+        {'id': 4, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
+        {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
+        {'id': 6, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg', 'link': '/statscan/'},
         {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
-        {'id': 8, 'name': 'Weather', 'img': '/static/img/noaa.jpg', 'link': '/gsod/'},
-        {'id': 8, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg', 'link': '/statscan/'},
+    ]
+
+    blogs = [
+        {'id': 1, 'name': 'Wordpress - Softball Team', 'img': '/static/img/looneytoons.jpg',
+         'link': 'https://looneytoons.sinto-ling.ca'},
+        {'id': 2, 'name': 'My Travels', 'img': '/static/img/travels.gif', 'link': 'https://travel.sinto-ling.ca'}
     ]
 
     context = {
-        'projects': json.dumps(projects)
+        'projects': json.dumps(projects),
+        'blogs': json.dumps(blogs)
     }
 
     return render(request, 'pages/projectList.html', context)
