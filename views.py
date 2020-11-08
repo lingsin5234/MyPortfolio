@@ -43,7 +43,7 @@ def projects_list(request):
         {'id': 4, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
         {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
         {'id': 6, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg', 'link': '/statscan/'},
-        {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
+        # {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
     ]
 
     blogs = [
