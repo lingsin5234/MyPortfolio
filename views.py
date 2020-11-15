@@ -10,7 +10,7 @@ from djangoapps.settings import BASE_DIR
 from djangoapps.utils import get_this_template
 
 
-# homepage - ###### DEFUNCT #######
+#  -----  DEFUNCT HOMEPAGE  -----  #
 def homepage(request):
 
     # give temporary data for projects
@@ -31,6 +31,8 @@ def homepage(request):
 
     return render(request, 'pages/me.html', context)
 
+#  ------------------------------  #
+
 
 # projects list
 def projects_list(request):
@@ -40,9 +42,9 @@ def projects_list(request):
         {'id': 1, 'name': 'Resume', 'img': '/static/img/writing.jpg', 'link': '/resume/'},
         {'id': 2, 'name': 'Baseball', 'img': '/static/img/baseball.jpg', 'link': '/baseball/'},
         {'id': 3, 'name': 'Weather', 'img': '/static/img/noaa.jpg', 'link': '/gsod/'},
-        {'id': 4, 'name': 'Tutorials', 'img': '/static/img/tutorial.jpg', 'link': '/tutorials/'},
-        {'id': 5, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
-        {'id': 6, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg', 'link': '/statscan/'},
+        {'id': 4, 'name': 'Udemy Courses', 'img': '/static/img/coding.jpg', 'link': '/udemy/'},
+        {'id': 5, 'name': 'Canada Open Data', 'img': '/static/img/canada-bike.jpg', 'link': '/statscan/'},
+        {'id': 6, 'name': 'Wiki Pages', 'img': '/static/img/tutorial.jpg', 'link': '/wiki/'},
         # {'id': 7, 'name': 'Budget Demo', 'img': '/static/img/piggybank.jpg', 'link': '/budget/'},
     ]
 
