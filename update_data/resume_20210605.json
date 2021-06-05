@@ -1,0 +1,517 @@
+[
+	{
+		"model": "resume.techskills",
+		"pk": 1,
+		"fields": {
+			"name": "Data Wrangling",
+			"year_exp": 8,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 2,
+		"fields": {
+			"name": "R",
+			"year_exp": 6,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 3,
+		"fields": {
+			"name": "Python",
+			"year_exp": 6,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 4,
+		"fields": {
+			"name": "Django",
+			"year_exp": 4,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 5,
+		"fields": {
+			"name": "MySQL",
+			"year_exp": 8,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 6,
+		"fields": {
+			"name": "SQL Server",
+			"year_exp": 6,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 7,
+		"fields": {
+			"name": "Postgres",
+			"year_exp": 2,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 8,
+		"fields": {
+			"name": "HTML, CSS",
+			"year_exp": 10,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 9,
+		"fields": {
+			"name": "JavaScript",
+			"year_exp": 5,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 10,
+		"fields": {
+			"name": "PHP",
+			"year_exp": 2,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 11,
+		"fields": {
+			"name": "D3.js",
+			"year_exp": 3,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 12,
+		"fields": {
+			"name": "Microsoft Office Suite",
+			"year_exp": 20,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 13,
+		"fields": {
+			"name": "MS Windows",
+			"year_exp": 20,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 14,
+		"fields": {
+			"name": "Ubuntu",
+			"year_exp": 8,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 15,
+		"fields": {
+			"name": "Amazon Web Services",
+			"year_exp": 4,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 16,
+		"fields": {
+			"name": "Digital Ocean",
+			"year_exp": 4,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 17,
+		"fields": {
+			"name": "Azure Portal",
+			"year_exp": 2,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 18,
+		"fields": {
+			"name": "Lifecycle Services",
+			"year_exp": 1,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 19,
+		"fields": {
+			"name": "Dynamics 365 F&O",
+			"year_exp": 1,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.techskills",
+		"pk": 20,
+		"fields": {
+			"name": "JIRA",
+			"year_exp": 3,
+			"order": 0
+		}
+	},
+	{
+		"model": "resume.education",
+		"pk": 1,
+		"fields": {
+			"school": "University of Toronto",
+			"cert": "Bachelor of Applied Science",
+			"major": "Electrical Engineering",
+			"start_year": 2007,
+			"start_month": 9,
+			"end_year": 2012,
+			"end_month": 4
+		}
+	},
+	{
+		"model": "resume.education",
+		"pk": 2,
+		"fields": {
+			"school": "Seneca College Applied Arts and Technology",
+			"cert": "Advanced Diploma",
+			"major": "Electronics Engineering - Communications",
+			"start_year": 2012,
+			"start_month": 9,
+			"end_year": 2015,
+			"end_month": 4
+		}
+	},
+	{
+		"model": "resume.workexperience",
+		"pk": 1,
+		"fields": {
+			"company": "Royal Bank of Canada",
+			"title": "Business Systems Analyst",
+			"start_year": 2017,
+			"start_month": 7,
+			"end_year": 2020,
+			"end_month": 1
+		}
+	},
+	{
+		"model": "resume.workexperience",
+		"pk": 2,
+		"fields": {
+			"company": "PartsEngine",
+			"title": "Data Specialist",
+			"start_year": 2015,
+			"start_month": 7,
+			"end_year": 2017,
+			"end_month": 6
+		}
+	},
+	{
+		"model": "resume.workexperience",
+		"pk": 3,
+		"fields": {
+			"company": "The Conference Board of Canada",
+			"title": "Systems Analyst",
+			"start_year": 2021,
+			"start_month": 1,
+			"end_year": null,
+			"end_month": null
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 1,
+		"fields": {
+			"job": 2,
+			"description": "Generated R scripts to simplify product data, price and inventory updates"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 2,
+		"fields": {
+			"job": 2,
+			"description": "Automated part number searching with casperjs"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 3,
+		"fields": {
+			"job": 2,
+			"description": "Tracked and stored pricing history in mongoDB"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 4,
+		"fields": {
+			"job": 2,
+			"description": "Created ETL process from various sources of data, such as SQL Server and QuickBooks"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 5,
+		"fields": {
+			"job": 2,
+			"description": "Handled locally-hosted data warehouse using MySQL"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 6,
+		"fields": {
+			"job": 2,
+			"description": "Automated ETL process with R libraries and crontab on Ubuntu"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 7,
+		"fields": {
+			"job": 2,
+			"description": "Created Shiny Apps using Shiny Server and R for improved daily workflows"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 8,
+		"fields": {
+			"job": 2,
+			"description": "Provided visual data analysis of company sales using dashboard created in R"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 9,
+		"fields": {
+			"job": 1,
+			"description": "Established support role as team lead and continued growth with ITIL4 Certification"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 10,
+		"fields": {
+			"job": 1,
+			"description": "Generated and documented report queries for SQL Server and Sybase"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 11,
+		"fields": {
+			"job": 1,
+			"description": "Directed US applications support team to automate and improve job notifications"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 12,
+		"fields": {
+			"job": 1,
+			"description": "Collaborated with different teams for insight and direction to proactively solve issues"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 13,
+		"fields": {
+			"job": 1,
+			"description": "Supported annual internal questionnaire with over 6000 users"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 14,
+		"fields": {
+			"job": 1,
+			"description": "Upgraded new vendor application for business users with no dev team involvement"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 15,
+		"fields": {
+			"job": 1,
+			"description": "On-boarded applications to new access management and risk management tools"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 16,
+		"fields": {
+			"job": 3,
+			"description": "Provide user access management for enterprise applications, including Dynamics 365 and Azure"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 17,
+		"fields": {
+			"job": 3,
+			"description": "Support and maintain applications, resolve data integration and production issues"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 18,
+		"fields": {
+			"job": 3,
+			"description": "Participate in creation and execution of software implementation and upgrade plans"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 19,
+		"fields": {
+			"job": 3,
+			"description": "Upgrade applications to use Single Sign-On with Azure Active Directory"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 20,
+		"fields": {
+			"job": 3,
+			"description": "Implement secure application integrations with Azure and Dynamics 365 using OAuth 2.0"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 21,
+		"fields": {
+			"job": 3,
+			"description": "Document key processes to applications, CRM, and data integration and evaluate for improvement"
+		}
+	},
+	{
+		"model": "resume.workdescriptions",
+		"pk": 22,
+		"fields": {
+			"job": 3,
+			"description": "On-board new cloud applications, including JIRA, Voxco, and Board"
+		}
+	},
+	{
+		"model": "resume.qualifications",
+		"pk": 1,
+		"fields": {
+			"highlight": "Capable in various programming languages, including R, Python and SQL",
+			"order": 1
+		}
+	},
+	{
+		"model": "resume.qualifications",
+		"pk": 2,
+		"fields": {
+			"highlight": "Project management skills from various projects, including Django, Shiny Apps",
+			"order": 2
+		}
+	},
+	{
+		"model": "resume.qualifications",
+		"pk": 3,
+		"fields": {
+			"highlight": "Strong oral and written communication skills",
+			"order": 3
+		}
+	},
+	{
+		"model": "resume.qualifications",
+		"pk": 4,
+		"fields": {
+			"highlight": "Resourceful, detail-oriented, and initiates self-learning",
+			"order": 4
+		}
+	},
+	{
+		"model": "resume.qualifications",
+		"pk": 5,
+		"fields": {
+			"highlight": "Team-player and contributor, also experienced as a lead",
+			"order": 5
+		}
+	},
+	{
+		"model": "resume.projectexperience",
+		"pk": 1,
+		"fields": {
+			"name": "My Portfolio",
+			"description": "The D3.js Javascript library is also used for visualization. Although there is not an abundance of data for this project, the Main Page and Resume pages are built for future additions of projects that are worked on.",
+			"start_year": 2019,
+			"start_month": 6,
+			"end_year": null,
+			"end_month": null
+		}
+	},
+	{
+		"model": "resume.projectexperience",
+		"pk": 2,
+		"fields": {
+			"name": "Budget App",
+			"description": "This project is created to replace a spreadsheet that I use to track my finances. I tend to spend a lot of time inputting data into the spreadsheet and then balancing the columns afterwards. This app is to make things easier.",
+			"start_year": 2020,
+			"start_month": 1,
+			"end_year": null,
+			"end_month": null
+		}
+	},
+	{
+		"model": "resume.projectexperience",
+		"pk": 3,
+		"fields": {
+			"name": "Baseball Stats",
+			"description": "The purpose of this project is to handle baseball stats from its raw event file format and convert it into a usable format. One of my personal goals for this project is to understand and develop an ETL process for handling this data.",
+			"start_year": 2017,
+			"start_month": 10,
+			"end_year": null,
+			"end_month": null
+		}
+	},
+	{
+		"model": "resume.projectexperience",
+		"pk": 4,
+		"fields": {
+			"name": "Weather Project",
+			"description": "The purpose of this project is to run a daily ETL of the GSOD data (hosted by the National Oceanic and Atmospheric Administration), polish its data in the database, build prediction models and design data visualizations with the data and models.",
+			"start_year": 2018,
+			"start_month": 4,
+			"end_year": null,
+			"end_month": null
+		}
+	},
+	{
+		"model": "resume.contactme",
+		"pk": 1,
+		"fields": {
+			"name": "Testing",
+			"email": "me@me.ca",
+			"message": "Testing"
+		}
+	}
+]
